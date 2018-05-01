@@ -37,4 +37,4 @@ If you can not access Python and/or Jupyter Notebook on your machine, you can st
 1. [Goodies of the Standard Library](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/std_lib.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/std_lib.ipynb)
 1. [Testing with pytest - part 2](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/testing2.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/testing2.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/testing2_exercise.ipynb)
 1. Project structure
-1. Recap exercise 1
+1. Recap exercise 2

@@ -1,4 +1,4 @@
-# Teach and learn Python 3
+# Learn Python 3
 
 [![Build Status](https://travis-ci.org/jerry-git/learn-python3.svg?branch=master)](https://travis-ci.org/jerry-git/learn-python3)
 
@@ -27,13 +27,14 @@ If you can not access Python and/or Jupyter Notebook on your machine, you can st
 1. [Dictionaries](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/dictionaries.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/dictionaries.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/dictionaries_exercise.ipynb)
 1. [For loops](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/for_loops.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/for_loops.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/for_loops_exercise.ipynb)
 1. [Functions](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/functions.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/functions.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/functions_exercise.ipynb)
-1. [Testing with pytest - part 1](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/testing1.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/testing1.ipynb)
-1. RECAP EXERCISE 1
-1. [File I\O](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/file_io.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/file_io.ipynb)
+1. [Testing with pytest - part 1](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/testing1.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/testing1.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/testing1_exercise.ipynb)
+1. Recap exercise 1 [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/recap1_exercise.ipynb)
+1. [File I\O](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/file_io.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/file_io.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/file_io_exercise.ipynb)
 1. [Classes](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/classes.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/classes.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/classes_exercise.ipynb)
-1. [Exceptions](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/exceptions.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exceptions.ipynb)
-1. Project structure
+1. [Exceptions](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/exceptions.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exceptions.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/exceptions_exercise.ipynb)
+1. Modules and packages
 1. [Debugging](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/debugging.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/debugging.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/debugging_exercise.ipynb)
 1. [Goodies of the Standard Library](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/std_lib.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/std_lib.ipynb)
-1. [Testing with pytest - part 2](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/testing2.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/testing2.ipynb)
-1. RECAP EXERCISE 2
+1. [Testing with pytest - part 2](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/testing2.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/testing2.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/testing2_exercise.ipynb)
+1. Project structure
+1. Recap exercise 1

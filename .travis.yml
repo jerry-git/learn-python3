@@ -1,0 +1,22 @@
+sudo: false
+language: python
+
+install:
+- pip install jupyter
+- pip install tox
+- pip install nbval
+- pip install pytest
+
+
+stages:
+  - test
+
+jobs:
+  include:
+  - python: 3.5
+    env: TOXENV=py35
+  - python: 3.6
+    env: TOXENV=py36
+
+script:
+- tox

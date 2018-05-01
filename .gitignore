@@ -1,0 +1,6 @@
+.DS_Store
+*ipynb_checkpoints*
+.idea*
+.pytest_cache*
+.tox*
+*pycache*

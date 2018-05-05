@@ -11848,11 +11848,11 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>local now: 2018-04-29 09:37:51.098934
-utc now: 2018-04-29 07:37:51.099132
-2018 4 29 9 37 51
-date: 2018-04-29
-time: 09:37:51.098934
+<pre>local now: 2018-05-05 09:21:55.642865
+utc now: 2018-05-05 07:21:55.643048
+2018 5 5 9 21 55
+date: 2018-05-05
+time: 09:21:55.642865
 </pre>
 </div>
 </div>
@@ -11896,8 +11896,8 @@ time: 09:37:51.098934
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2018/04/29-09:37:51
-date: 2018-04-29 time:09:37:51
+<pre>2018/05/05-09:21:55
+date: 2018-05-05 time:09:21:55
 </pre>
 </div>
 </div>
@@ -11984,10 +11984,105 @@ date: 2018-04-29 time:09:37:51
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>tomorrow this time: 2018-04-30 09:37:51.098934
+<pre>tomorrow this time: 2018-05-06 09:21:55.642865
 tomorrow - now = 1 day, 0:00:00
 days: 1, seconds: 0
 total seconds: 86400.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Working-with-timezones">Working with timezones<a class="anchor-link" href="#Working-with-timezones">&#182;</a></h3><p>Let's first make sure <a href="http://pytz.sourceforge.net/"><code>pytz</code></a> is installed.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install pytz
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: pytz in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (2018.4)
+<span class="ansi-yellow-fg">You are using pip version 10.0.0, however version 10.0.1 is available.
+You should consider upgrading via the &#39;pip install --upgrade pip&#39; command.</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">import</span> <span class="nn">pytz</span>
+
+<span class="n">naive_utc_now</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;naive utc now: </span><span class="si">{}</span><span class="s1">, tzinfo: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">naive_utc_now</span><span class="p">,</span> <span class="n">naive_utc_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">))</span>
+
+<span class="c1"># Localizing naive datetimes</span>
+<span class="n">UTC_TZ</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s1">&#39;UTC&#39;</span><span class="p">)</span>
+<span class="n">utc_now</span> <span class="o">=</span> <span class="n">UTC_TZ</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">naive_utc_now</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;utc now: </span><span class="si">{}</span><span class="s1">, tzinfo: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">utc_now</span><span class="p">,</span> <span class="n">utc_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">))</span>
+
+<span class="c1"># Converting localized datetimes to different timezone</span>
+<span class="n">PARIS_TZ</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s1">&#39;Europe/Paris&#39;</span><span class="p">)</span>
+<span class="n">paris_now</span> <span class="o">=</span> <span class="n">PARIS_TZ</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">utc_now</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Paris: </span><span class="si">{}</span><span class="s1">, tzinfo: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">paris_now</span><span class="p">,</span> <span class="n">paris_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">))</span>
+
+<span class="n">NEW_YORK_TZ</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s1">&#39;America/New_York&#39;</span><span class="p">)</span>
+<span class="n">ny_now</span> <span class="o">=</span> <span class="n">NEW_YORK_TZ</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">utc_now</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;New York: </span><span class="si">{}</span><span class="s1">, tzinfo: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ny_now</span><span class="p">,</span> <span class="n">ny_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>naive utc now: 2018-05-05 07:21:56.479642, tzinfo: None
+utc now: 2018-05-05 07:21:56.479642+00:00, tzinfo: UTC
+Paris: 2018-05-05 09:21:56.479642+02:00, tzinfo: Europe/Paris
+New York: 2018-05-05 03:21:56.479642-04:00, tzinfo: America/New_York
 </pre>
 </div>
 </div>
@@ -12006,7 +12101,7 @@ total seconds: 86400.0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -12057,7 +12152,7 @@ This is critical
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -12089,8 +12184,8 @@ This is critical
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2018-04-29 09:37:51,152 | MyLogger     | WARNING    | Something bad is going to happen
-2018-04-29 09:37:51,153 | MyLogger     | ERROR      | Uups, it already happened
+<pre>2018-05-05 09:21:56,527 | MyLogger     | WARNING    | Something bad is going to happen
+2018-05-05 09:21:56,528 | MyLogger     | ERROR      | Uups, it already happened
 </pre>
 </div>
 </div>
@@ -12109,7 +12204,7 @@ This is critical
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -12135,8 +12230,8 @@ This is critical
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>random integer between 1-100: 86
-random float between 0-1: 0.1548320881860572
+<pre>random integer between 1-100: 68
+random float between 0-1: 0.5799292152023026
 </pre>
 </div>
 </div>
@@ -12156,7 +12251,7 @@ random float between 0-1: 0.1548320881860572
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -12218,7 +12313,7 @@ random float between 0-1: 0.1548320881860572
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -12271,7 +12366,7 @@ numbers: [&#39;8&#39;, &#39;1&#39;, &#39;2&#39;, &#39;5&#39;, &#39;0&#39;, &#39;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>

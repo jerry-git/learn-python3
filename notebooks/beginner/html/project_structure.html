@@ -11869,29 +11869,27 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Python-package">Python package<a class="anchor-link" href="#Python-package">&#182;</a></h2><p>An example structure for a python project:</p>
 
-<pre><code>my_project
-
+<pre><code>my_project/
     README.md
     requirements.txt
     setup.py
 
-    src
-        my_project
+    src/
+        my_project/
             __init__.py
             my_module.py
             other_module.py
 
-            my_pkg1
+            my_pkg1/
                 __init__.py
                 my_third_module.py
 
-
-    tests
+    tests/
         conftest.py
         test_module.py
         test_other_module.py
 
-        my_pkg1
+        my_pkg1/
             test_my_third_module.py</code></pre>
 <ul>
 <li><a href="https://pip.pypa.io/en/latest/user_guide/#requirements-files">requirements.txt</a> lists the Python packages from which my_project depends on.<ul>

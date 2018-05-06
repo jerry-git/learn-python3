@@ -11846,7 +11846,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>my_intance: &lt;__main__.MyFirstClass object at 0x106a164a8&gt;
+<pre>my_intance: &lt;__main__.MyFirstClass object at 0x106918550&gt;
 type: &lt;class &#39;__main__.MyFirstClass&#39;&gt;
 my_instance.name: John Doe
 </pre>
@@ -12000,7 +12000,7 @@ instance created
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Class-variables-vs-instance-variables">Class variables vs instance variables<a class="anchor-link" href="#Class-variables-vs-instance-variables">&#182;</a></h2><p>Class variables are shared between all the instances of that class whereas instance variables can hold different values between different instances of that class.</p>
+<h3 id="__str__()"><code>__str__()</code><a class="anchor-link" href="#__str__()">&#182;</a></h3><p><code>__str__()</code> is a special method which is called when an instance of the class is converted to string (e.g. when you want to print the instance). In other words, by defining <code>__str__</code> method for your class, you can decide what's the printable version of the instances of your class. The method should return a string.</p>
 
 </div>
 </div>
@@ -12008,6 +12008,55 @@ instance created
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Person: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    
+<span class="n">jack</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="mi">82</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is the string presentation of jack: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jack</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>This is the string presentation of jack: Person: Jack
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Class-variables-vs-instance-variables">Class variables vs instance variables<a class="anchor-link" href="#Class-variables-vs-instance-variables">&#182;</a></h2><p>Class variables are shared between all the instances of that class whereas instance variables can hold different values between different instances of that class.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
@@ -12074,7 +12123,7 @@ instance_variable: bar, name: Modified name, description: Just an example of a s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
@@ -12104,7 +12153,7 @@ instance_variable: bar, name: Modified name, description: Just an example of a s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
@@ -12156,7 +12205,7 @@ instance_variable: bar, name: Modified name, description: Just an example of a s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
@@ -12208,7 +12257,7 @@ instance_variable: bar, name: Modified name, description: Just an example of a s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
@@ -12238,7 +12287,7 @@ instance_variable: bar, name: Modified name, description: Just an example of a s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>

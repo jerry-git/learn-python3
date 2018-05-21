@@ -11872,12 +11872,12 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Requirement already satisfied: pytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (3.5.0)
-Requirement already satisfied: pluggy&lt;0.7,&gt;=0.5 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (0.6.0)
-Requirement already satisfied: py&gt;=1.5.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.5.3)
 Requirement already satisfied: attrs&gt;=17.4.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (17.4.0)
-Requirement already satisfied: six&gt;=1.10.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.11.0)
-Requirement already satisfied: more-itertools&gt;=4.0.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (4.1.0)
 Requirement already satisfied: setuptools in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (39.0.1)
+Requirement already satisfied: py&gt;=1.5.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.5.3)
+Requirement already satisfied: pluggy&lt;0.7,&gt;=0.5 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (0.6.0)
+Requirement already satisfied: more-itertools&gt;=4.0.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (4.1.0)
+Requirement already satisfied: six&gt;=1.10.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.11.0)
 Requirement already satisfied: ipython_pytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (0.0.1)
 </pre>
 </div>
@@ -11907,7 +11907,7 @@ Requirement already satisfied: ipython_pytest in /Users/jerry/.virtualenvs/learn
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Due to technical limitations of Jupyter notebooks and pytest extension, all code that runs inside tests has to be in the same cell. In other words, you can not call e.g. functions that are defined in other cells.</p>
-<p>In real applications you have separate directory and files for your tests (see TODO LINK ). The above mentioned limititation is only present for writing tests in Jupyter environment.</p>
+<p>In real applications you have separate directory and .py files for your tests. The above mentioned limititation is only present for writing tests in Jupyter environment.</p>
 
 </div>
 </div>
@@ -11970,7 +11970,7 @@ def test_sum_of_three_numbers():
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>============================================================ test session starts ============================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
-rootdir: /private/var/folders/nk/wgt71p5s1_d1wssm881h7ykc0000gn/T/tmpy9z1rypm, inifile:
+rootdir: /private/var/folders/nk/wgt71p5s1_d1wssm881h7ykc0000gn/T/tmpn9irzd9l, inifile:
 plugins: nbval-0.9.0
 collected 1 item
 

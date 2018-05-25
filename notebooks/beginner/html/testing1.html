@@ -11777,7 +11777,7 @@ div#notebook {
   }
 
   $( document ).ready(function(){
-    show=false;
+show=false;
     $('div.output').hide()
   });
 </script>
@@ -11841,7 +11841,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Running-pytest-inside-notebooks">Running pytest inside notebooks<a class="anchor-link" href="#Running-pytest-inside-notebooks">&#182;</a></h3><p>These are the steps required to run pytest inside Jupyter cells.</p>
+<h3 id="Running-pytest-inside-notebooks">Running pytest inside notebooks<a class="anchor-link" href="#Running-pytest-inside-notebooks">&#182;</a></h3><p>These are the steps required to run pytest inside Jupyter cells. You can copy the content of this cell to the top of your notebook which contains tests.</p>
 
 </div>
 </div>
@@ -11851,10 +11851,17 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Let&#39;s make sure pytest and ipython_pytest plugin are installed</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Let&#39;s make sure pytest and ipytest packages are installed</span>
+<span class="c1"># ipytest is required for running pytest inside Jupyter notebooks</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install pytest
-<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install ipython_pytest
+<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install ipytest
+
+<span class="kn">import</span> <span class="nn">ipytest.magics</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="c1"># Filename has to be set explicitely for ipytest </span>
+<span class="vm">__file__</span> <span class="o">=</span> <span class="s1">&#39;testing1.ipynb&#39;</span>
 </pre></div>
 
 </div>
@@ -11872,13 +11879,13 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Requirement already satisfied: pytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (3.5.0)
-Requirement already satisfied: attrs&gt;=17.4.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (17.4.0)
-Requirement already satisfied: setuptools in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (39.0.1)
 Requirement already satisfied: py&gt;=1.5.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.5.3)
+Requirement already satisfied: six&gt;=1.10.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.11.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (17.4.0)
 Requirement already satisfied: pluggy&lt;0.7,&gt;=0.5 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (0.6.0)
 Requirement already satisfied: more-itertools&gt;=4.0.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (4.1.0)
-Requirement already satisfied: six&gt;=1.10.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.11.0)
-Requirement already satisfied: ipython_pytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (0.0.1)
+Requirement already satisfied: setuptools in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (39.0.1)
+Requirement already satisfied: ipytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (0.2.2)
 </pre>
 </div>
 </div>
@@ -11887,14 +11894,23 @@ Requirement already satisfied: ipython_pytest in /Users/jerry/.virtualenvs/learn
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="pytest-test-cases"><code>pytest</code> test cases<a class="anchor-link" href="#pytest-test-cases">&#182;</a></h2><p>Let's consider we have a function called <code>sum_of_three_numbers</code> for which we want to write a test.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Let&#39;s load ipython_pytest extension which makes it possible to run</span>
-<span class="c1"># pytest inside notebooks</span>
-<span class="o">%</span><span class="k">load_ext</span> ipython_pytest
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This would be in your e.g. implementation.py</span>
+<span class="k">def</span> <span class="nf">sum_of_three_numbers</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="n">num3</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="n">num3</span>
 </pre></div>
 
 </div>
@@ -11906,17 +11922,7 @@ Requirement already satisfied: ipython_pytest in /Users/jerry/.virtualenvs/learn
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Due to technical limitations of Jupyter notebooks and pytest extension, all code that runs inside tests has to be in the same cell. In other words, you can not call e.g. functions that are defined in other cells.</p>
-<p>In real applications you have separate directory and .py files for your tests. The above mentioned limititation is only present for writing tests in Jupyter environment.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="pytest-test-cases"><code>pytest</code> test cases<a class="anchor-link" href="#pytest-test-cases">&#182;</a></h2><p>Pytest test cases are actually quite similar as you have already seen in the exercises. Most of the exercises are structured like pytest test cases by dividing each exercise into three cells:</p>
+<p>Pytest test cases are actually quite similar as you have already seen in the exercises. Most of the exercises are structured like pytest test cases by dividing each exercise into three cells:</p>
 <ol>
 <li>Setup the variables used in the test</li>
 <li>Your implementation</li>
@@ -11932,12 +11938,9 @@ Requirement already satisfied: ipython_pytest in /Users/jerry/.virtualenvs/learn
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">pytest</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">run_pytest</span>[clean]
 # Mention this at the top of cells which contain test(s)
-
-# This would be in your e.g. implementation.py
-def sum_of_three_numbers(num1, num2, num3):
-    return num1 + num2 + num3
+# This is only required for running pytest in Jupyter notebooks
 
 
 # This would be in your test_implementation.py
@@ -11968,15 +11971,15 @@ def test_sum_of_three_numbers():
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>============================================================ test session starts ============================================================
+<pre>================================================================================================= test session starts =================================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
-rootdir: /private/var/folders/nk/wgt71p5s1_d1wssm881h7ykc0000gn/T/tmpn9irzd9l, inifile:
+rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
 collected 1 item
 
-_ipytesttmp.py .                                                                                                                      [100%]
+testing1.py .                                                                                                                                                                                                   [100%]
 
-========================================================= 1 passed in 0.02 seconds ==========================================================
+============================================================================================== 1 passed in 0.02 seconds ===============================================================================================
 </pre>
 </div>
 </div>

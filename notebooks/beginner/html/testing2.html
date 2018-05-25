@@ -11777,7 +11777,7 @@ div#notebook {
   }
 
   $( document ).ready(function(){
-    show=false;
+show=false;
     $('div.output').hide()
   });
 </script>
@@ -11808,10 +11808,15 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Let&#39;s make sure pytest and ipython_pytest plugin are installed</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Let&#39;s make sure pytest and ipytest packages are installed</span>
+<span class="c1"># ipytest is required for running pytest inside Jupyter notebooks</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install pytest
-<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install ipython_pytest
+<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install ipytest
+
+<span class="kn">import</span> <span class="nn">ipytest.magics</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="vm">__file__</span> <span class="o">=</span> <span class="s1">&#39;testing2.ipynb&#39;</span>
 </pre></div>
 
 </div>
@@ -11829,13 +11834,13 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Requirement already satisfied: pytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (3.5.0)
-Requirement already satisfied: py&gt;=1.5.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.5.3)
-Requirement already satisfied: pluggy&lt;0.7,&gt;=0.5 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (0.6.0)
-Requirement already satisfied: more-itertools&gt;=4.0.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (4.1.0)
 Requirement already satisfied: setuptools in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (39.0.1)
-Requirement already satisfied: six&gt;=1.10.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.11.0)
 Requirement already satisfied: attrs&gt;=17.4.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (17.4.0)
-Requirement already satisfied: ipython_pytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (0.0.1)
+Requirement already satisfied: more-itertools&gt;=4.0.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (4.1.0)
+Requirement already satisfied: pluggy&lt;0.7,&gt;=0.5 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (0.6.0)
+Requirement already satisfied: py&gt;=1.5.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.5.3)
+Requirement already satisfied: six&gt;=1.10.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.11.0)
+Requirement already satisfied: ipytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (0.2.2)
 </pre>
 </div>
 </div>
@@ -11844,12 +11849,39 @@ Requirement already satisfied: ipython_pytest in /Users/jerry/.virtualenvs/learn
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="@pytest.fixture"><a href="https://docs.pytest.org/en/latest/fixture.html#pytest-fixtures-explicit-modular-scalable"><code>@pytest.fixture</code></a><a class="anchor-link" href="#@pytest.fixture">&#182;</a></h2><p>Let's consider we have an implemention of <code>Person</code> class which we want to test.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> ipython_pytest
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This would be e.g. in person.py</span>
+<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="n">first_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span> <span class="o">=</span> <span class="n">last_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">as_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_name</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">}</span>
+        
+    <span class="k">def</span> <span class="nf">increase_age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">years</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">years</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Can not make people younger :(&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+=</span> <span class="n">years</span>
 </pre></div>
 
 </div>
@@ -11861,7 +11893,7 @@ Requirement already satisfied: ipython_pytest in /Users/jerry/.virtualenvs/learn
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="@pytest.fixture"><a href="https://docs.pytest.org/en/latest/fixture.html#pytest-fixtures-explicit-modular-scalable"><code>@pytest.fixture</code></a><a class="anchor-link" href="#@pytest.fixture">&#182;</a></h2><p>You can easily create resusable code by using pytest fixtures. If you introduce your fixtures inside <a href="https://docs.pytest.org/en/latest/fixture.html#conftest-py-sharing-fixture-functions"><em>conftest.py</em></a>, the fixtures are available for all your test cases. In general, the location of <em>conftest.py</em> is at the root of your <em>tests</em> directory.</p>
+<p>You can easily create resusable testing code by using pytest fixtures. If you introduce your fixtures inside <a href="https://docs.pytest.org/en/latest/fixture.html#conftest-py-sharing-fixture-functions"><em>conftest.py</em></a>, the fixtures are available for all your test cases. In general, the location of <em>conftest.py</em> is at the root of your <em>tests</em> directory.</p>
 
 </div>
 </div>
@@ -11871,43 +11903,35 @@ Requirement already satisfied: ipython_pytest in /Users/jerry/.virtualenvs/learn
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">pytest</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This would be in either conftest.py or test_person.py</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">default_person</span><span class="p">():</span>
+    <span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s1">&#39;Doe&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">82</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">person</span>
+</pre></div>
 
-# This would be e.g. in person.py
-class Person:
-    def __init__(self, first_name, last_name, age):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-    
-    @property
-    def full_name(self):
-        return &#39;{} {}&#39;.format(self.first_name, self.last_name)
-    
-    @property
-    def as_dict(self):
-        return {&#39;name&#39;: self.full_name, &#39;age&#39;: self.age}
-        
-    def increase_age(self, years):
-        if years &lt; 0:
-            raise ValueError(&#39;Can not make people younger :(&#39;)
-        self.age += years
-        
-        
-#######################################   
+</div>
+</div>
+</div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then you can utilize <code>default_person</code> fixture in the actual test cases.</p>
 
-# Import pytest in all test modules where you need it
-import pytest
-
-# This would be in either conftest.py or test_person.py
-@pytest.fixture()
-def default_person():
-    person = Person(first_name=&#39;John&#39;, last_name=&#39;Doe&#39;, age=82)
-    return person
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">run_pytest</span>[clean]
 
 # These would be in test_person.py
-
 def test_full_name(default_person): # Note: we use fixture as an argument of the test case
     result = default_person.full_name
     assert result == &#39;John Doe&#39;
@@ -11946,15 +11970,15 @@ def test_increase_age_with_negative_number(default_person):
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>============================================================ test session starts ============================================================
+<pre>================================================================================================= test session starts =================================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
-rootdir: /private/var/folders/nk/wgt71p5s1_d1wssm881h7ykc0000gn/T/tmpj71o38he, inifile:
+rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
 collected 4 items
 
-_ipytesttmp.py ....                                                                                                                   [100%]
+testing2.py ....                                                                                                                                                                                                [100%]
 
-========================================================= 4 passed in 0.03 seconds ==========================================================
+============================================================================================== 4 passed in 0.02 seconds ===============================================================================================
 </pre>
 </div>
 </div>
@@ -11977,30 +12001,46 @@ _ipytesttmp.py ....                                                             
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="@pytest.mark.parametrize"><a href="https://docs.pytest.org/en/latest/parametrize.html#pytest-mark-parametrize-parametrizing-test-functions"><code>@pytest.mark.parametrize</code></a><a class="anchor-link" href="#@pytest.mark.parametrize">&#182;</a></h2><p>Sometimes you want to test the same functionality with multiple different inputs. <code>pytest.mark.parametrize</code> is your solution for defining multiple different inputs with expected outputs.</p>
+<h2 id="@pytest.mark.parametrize"><a href="https://docs.pytest.org/en/latest/parametrize.html#pytest-mark-parametrize-parametrizing-test-functions"><code>@pytest.mark.parametrize</code></a><a class="anchor-link" href="#@pytest.mark.parametrize">&#182;</a></h2><p>Sometimes you want to test the same functionality with multiple different inputs. <code>pytest.mark.parametrize</code> is your solution for defining multiple different inputs with expected outputs. Let's consider the following implementation of <code>replace_names</code> function.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">pytest</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This would be e.g. in string_manipulate.py</span>
+<span class="k">def</span> <span class="nf">replace_names</span><span class="p">(</span><span class="n">original_str</span><span class="p">,</span> <span class="n">new_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Replaces names (uppercase words) of original_str by new_name&quot;&quot;&quot;</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">original_str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">manipulated_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">new_name</span> <span class="k">if</span> <span class="n">w</span><span class="o">.</span><span class="n">istitle</span><span class="p">()</span> <span class="k">else</span> <span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">manipulated_words</span><span class="p">)</span>
+</pre></div>
 
-# This would be e.g. in string_manipulate.py
-def replace_names(original_str, new_name):
-    &quot;&quot;&quot;Replaces names (uppercase words) of original_str by new_name&quot;&quot;&quot;
-    words = original_str.split()
-    manipulated_words = [new_name if w.istitle() else w for w in words]
-    return &#39; &#39;.join(manipulated_words)
-    
-    
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can test the <code>replace_names</code> function with multiple inputs by using <code>pytest.mark.parametrize</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">run_pytest</span>[clean]
+
 # This would be in your test module
-
-import pytest
-
 @pytest.mark.parametrize(&quot;original,new_name,expected&quot;, [
         (&#39;this is Lisa&#39;, &#39;John Doe&#39;, &#39;this is John Doe&#39;),
         (&#39;how about Frank and Amy&#39;, &#39;John&#39;, &#39;how about John and John&#39;),
@@ -12025,20 +12065,20 @@ def test_replace_names(original, new_name, expected):
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>============================================================ test session starts ============================================================
+<pre>================================================================================================= test session starts =================================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
-rootdir: /private/var/folders/nk/wgt71p5s1_d1wssm881h7ykc0000gn/T/tmp3bo6s4_6, inifile:
+rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
 collected 3 items
 
-_ipytesttmp.py ...                                                                                                                    [100%]
+testing2.py ...                                                                                                                                                                                                 [100%]
 
-============================================================= warnings summary ==============================================================
+================================================================================================== warnings summary ===================================================================================================
 None
   Module already imported so cannot be rewritten: nbval
 
 -- Docs: http://doc.pytest.org/en/latest/warnings.html
-=================================================== 3 passed, 1 warnings in 0.03 seconds ====================================================
+======================================================================================== 3 passed, 1 warnings in 0.03 seconds =========================================================================================
 </pre>
 </div>
 </div>

@@ -18,6 +18,9 @@ If you can not access Python and/or Jupyter Notebook on your machine, you can st
 2. Run `jupyter notebook` command in your command line in the repository directory.
 3. Jupyter Notebook session will open in your browser and you can start navigating through the materials.
 
+#### Contributing
+See [contributing]() guide.
+
 
 ## Beginner
 1. [Strings](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/strings.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/strings.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/strings_exercise.ipynb)

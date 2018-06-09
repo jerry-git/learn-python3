@@ -19,7 +19,7 @@ If you can not access Python and/or Jupyter Notebook on your machine, you can st
 3. Jupyter Notebook session will open in your browser and you can start navigating through the materials.
 
 #### Contributing
-See [contributing]() guide.
+See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRIBUTING.md) guide.
 
 
 ## Beginner
@@ -42,3 +42,33 @@ See [contributing]() guide.
 1. [Virtual environment](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/venv.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/venv.ipynb)
 1. [Project structure](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/project_structure.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/project_structure.ipynb)
 1. Recap exercise 2 [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/recap2_exercise.ipynb)
+
+
+## Intermediate
+(This is currently a road map of what is planned, not in any particular order.)
+* Sets
+* Comprehensions
+* Generators
+* Decorators
+* Context managers
+* Playing with attributes
+* Packing and unpacking
+* *, *args, **kwargs
+* Command line arguments with click
+* OOP - inheritance
+* OOP - Abstract Base Classes
+* OOP - attrs
+* Testing with mocks
+* Structuring your tests
+* Goodies of the Standard Library - part2
+
+
+## Use cases
+
+### Playing with the web
+* requests
+* beautifulsoup4
+* selenium
+
+### Automating excel stuff
+* openpyxl

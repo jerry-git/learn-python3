@@ -47,6 +47,7 @@ See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRI
 ## Intermediate
 (This is currently a road map of what is planned, not in any particular order.)
 * Sets
+* Tuples and namedtuples
 * Comprehensions
 * Generators
 * Decorators

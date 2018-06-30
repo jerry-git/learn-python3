@@ -45,7 +45,9 @@ See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRI
 
 
 ## Intermediate
-(This is currently a road map of what is planned, not in any particular order.)
+(This is currently mostly a road map of what is planned, not in any particular order.)
+1. [Idiomatic loops](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_loops.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_loops.ipynb)
+1. [Idiomatic dictionaries](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_dicts.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_dicts.ipynb)
 * Sets
 * Tuples and namedtuples
 * Comprehensions

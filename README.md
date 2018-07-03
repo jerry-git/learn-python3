@@ -48,6 +48,8 @@ See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRI
 (This is currently mostly a road map of what is planned, not in any particular order.)
 1. [Idiomatic loops](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_loops.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_loops.ipynb)
 1. [Idiomatic dictionaries](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_dicts.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_dicts.ipynb)
+1. [Idiomatic Python - miscellaneous part 1](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_misc1.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_misc1.ipynb)
+1. [Idiomatic Python - miscellaneous part 2](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_misc2.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_misc2.ipynb)
 * Sets
 * Tuples and namedtuples
 * Comprehensions

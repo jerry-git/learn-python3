@@ -11807,13 +11807,159 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Using-in-for-checking-presence-of-an-element-in-a-collection">Using <code>in</code> for checking presence of an element in a collection<a class="anchor-link" href="#Using-in-for-checking-presence-of-an-element-in-a-collection">&#182;</a></h2>
+<h2 id="Comprehensions">Comprehensions<a class="anchor-link" href="#Comprehensions">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">original_data</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><font color='red'>Don't do this.</font></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># list</span>
+<span class="n">square_roots_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">original_data</span><span class="p">:</span>
+    <span class="n">square_root</span> <span class="o">=</span> <span class="n">val</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> 
+    <span class="n">square_roots_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">square_root</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square_roots_list</span><span class="p">)</span>
+
+<span class="c1"># set</span>
+<span class="n">square_roots_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">original_data</span><span class="p">:</span>
+    <span class="n">square_root</span> <span class="o">=</span> <span class="n">val</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> 
+    <span class="n">square_roots_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">square_root</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square_roots_set</span><span class="p">)</span>
+
+<span class="c1"># dict</span>
+<span class="n">square_roots_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">original_data</span><span class="p">:</span>
+    <span class="n">square_root</span> <span class="o">=</span> <span class="n">val</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> 
+    <span class="n">square_roots_dict</span><span class="p">[</span><span class="n">val</span><span class="p">]</span> <span class="o">=</span> <span class="n">square_root</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square_roots_dict</span><span class="p">)</span> 
+
+<span class="c1"># dict with a condition</span>
+<span class="n">integer_square_roots_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">original_data</span><span class="p">:</span>
+    <span class="n">square_root</span> <span class="o">=</span> <span class="n">val</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">square_root</span><span class="o">.</span><span class="n">is_integer</span><span class="p">():</span>
+        <span class="n">integer_square_roots_dict</span><span class="p">[</span><span class="n">val</span><span class="p">]</span> <span class="o">=</span> <span class="n">square_root</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integer_square_roots_dict</span><span class="p">)</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1.0, 1.4142135623730951, 1.7320508075688772, 2.0]
+{1.0, 2.0, 1.7320508075688772, 1.4142135623730951}
+{1: 1.0, 2: 1.4142135623730951, 3: 1.7320508075688772, 4: 2.0}
+{1: 1.0, 4: 2.0}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Use-comprehensions!"><font color="green">Use comprehensions!</font><a class="anchor-link" href="#Use-comprehensions!">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">square_roots_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">original_data</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square_roots_list</span><span class="p">)</span>
+
+<span class="n">square_roots_set</span> <span class="o">=</span> <span class="p">{</span><span class="n">val</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">original_data</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square_roots_set</span><span class="p">)</span>
+
+<span class="n">square_roots_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">val</span><span class="p">:</span> <span class="n">val</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">original_data</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square_roots_dict</span><span class="p">)</span>
+
+<span class="n">integer_square_roots_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">val</span><span class="p">:</span> <span class="n">val</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">original_data</span> <span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integer_square_roots_dict</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1.0, 1.4142135623730951, 1.7320508075688772, 2.0]
+{1.0, 2.0, 1.7320508075688772, 1.4142135623730951}
+{1: 1.0, 2: 1.4142135623730951, 3: 1.7320508075688772, 4: 2.0}
+{1: 1.0, 4: 2.0}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-in-for-checking-presence-of-an-element-in-a-collection">Using <code>in</code> for checking presence of an element in a collection<a class="anchor-link" href="#Using-in-for-checking-presence-of-an-element-in-a-collection">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John Doe&#39;</span>
@@ -11835,7 +11981,7 @@ show=false;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;John&#39;</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Doe&#39;</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">:</span>
@@ -11875,7 +12021,7 @@ show=false;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">):</span>
@@ -11915,7 +12061,7 @@ show=false;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
@@ -11937,7 +12083,7 @@ show=false;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span>
@@ -11977,7 +12123,7 @@ show=false;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">:</span>
@@ -12017,7 +12163,7 @@ show=false;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># These are falsy</span>
@@ -12051,7 +12197,7 @@ show=false;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -12107,7 +12253,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">my_list</span><span class="p">:</span>
@@ -12163,7 +12309,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">example_collection</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Python is cool&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -12185,7 +12331,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">any_value_truthy</span> <span class="o">=</span> <span class="kc">True</span>
@@ -12236,7 +12382,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">any_value_truthy</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">example_collection</span><span class="p">)</span>
@@ -12289,7 +12435,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">some_condition</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># just a dummy condition</span>
@@ -12334,7 +12480,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span> <span class="k">if</span> <span class="n">some_condition</span> <span class="k">else</span> <span class="s1">&#39;Doe&#39;</span>
@@ -12375,7 +12521,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_person_details</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">is_gangster</span><span class="p">,</span> <span class="n">is_hacker</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
@@ -12399,7 +12545,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">show_person_details</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">83</span><span class="p">)</span>
@@ -12438,7 +12584,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">show_person_details</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="n">is_gangster</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_hacker</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">83</span><span class="p">)</span>
@@ -12477,7 +12623,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_person_details</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">is_gangster</span><span class="p">,</span> <span class="n">is_hacker</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
@@ -12515,7 +12661,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># original values</span>
@@ -12562,7 +12708,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># original values</span>
@@ -12607,7 +12753,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
@@ -12629,7 +12775,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -12674,7 +12820,7 @@ This should be true
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># unpacking</span>

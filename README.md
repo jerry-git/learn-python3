@@ -37,7 +37,7 @@ See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRI
 1. [Exceptions](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/exceptions.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exceptions.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/exceptions_exercise.ipynb)
 1. [Modules and packages](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/modules_and_packages.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/modules_and_packages.ipynb)
 1. [Debugging](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/debugging.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/debugging.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/debugging_exercise.ipynb)
-1. [Goodies of the Standard Library](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/std_lib.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/std_lib.ipynb)
+1. [Goodies of the Standard Library - part 1](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/std_lib.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/std_lib.ipynb)
 1. [Testing with pytest - part 2](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/testing2.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/testing2.ipynb) [[exercise]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/testing2_exercise.ipynb)
 1. [Virtual environment](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/venv.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/venv.ipynb)
 1. [Project structure](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/html/project_structure.html) [[notebook]](https://github.com/jerry-git/learn-python3/blob/master/notebooks/beginner/project_structure.ipynb)
@@ -45,19 +45,24 @@ See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRI
 
 
 ## Intermediate
-(This is currently mostly a road map of what is planned, not in any particular order.)
+
+#### Idiomatic Python
+Python is a powerfull language which contains many language features that are not present in most of the other languages. Idiomatic section will cover some of these Pythonic features in detail. This material could be especially useful for people who have backgound with other programming languages.
+
 1. [Idiomatic loops](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_loops.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_loops.ipynb)
 1. [Idiomatic dictionaries](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_dicts.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_dicts.ipynb)
 1. [Idiomatic Python - miscellaneous part 1](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_misc1.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_misc1.ipynb)
 1. [Idiomatic Python - miscellaneous part 2](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_misc2.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_misc2.ipynb)
+
+#### General topics
+1. [Goodies of the Standard Library - part 2](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/std_lib2.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/std_lib2.ipynb)
+
+#### Backlog
 * Sets
-* Tuples and namedtuples
-* Comprehensions
 * Generators
 * Decorators
 * Context managers
 * Playing with attributes
-* Packing and unpacking
 * *, *args, **kwargs
 * Command line arguments with click
 * OOP - inheritance
@@ -65,15 +70,14 @@ See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRI
 * OOP - attrs
 * Testing with mocks
 * Structuring your tests
-* Goodies of the Standard Library - part2
 
 
 ## Use cases
 
-### Playing with the web
+#### Playing with the web
 * requests
 * beautifulsoup4
 * selenium
 
-### Automating excel stuff
+#### Automating excel stuff
 * openpyxl

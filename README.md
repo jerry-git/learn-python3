@@ -47,7 +47,7 @@ See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRI
 ## Intermediate
 
 #### Idiomatic Python
-Python is a powerfull language which contains many language features that are not present in most of the other languages. Idiomatic section will cover some of these Pythonic features in detail. This material could be especially useful for people who have backgound with other programming languages.
+Python is a powerful language which contains many features that are not present in most other programming languages. Idiomatic section will cover some of these Pythonic features in detail. These materials are especially useful for people who have background with other programming languages.
 
 1. [Idiomatic loops](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_loops.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_loops.ipynb)
 1. [Idiomatic dictionaries](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_dicts.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_dicts.ipynb)

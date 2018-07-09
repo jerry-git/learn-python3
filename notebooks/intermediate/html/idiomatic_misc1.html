@@ -12626,7 +12626,8 @@ This should be true
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Extra:-forcing-keyword-only-argument-usage-with-`*`"><font color="green">Extra: forcing keyword only argument usage with `*`</font><a class="anchor-link" href="#Extra:-forcing-keyword-only-argument-usage-with-`*`">&#182;</a></h3>
+<h4 id="Extra:-keyword-only-arguments-after-`*`"><font color="green">Extra: keyword only arguments after `*`</font><a class="anchor-link" href="#Extra:-keyword-only-arguments-after-`*`">&#182;</a></h4><p>This might be useful for example if the signature of the function is likely to change in the future. For example, if there's even a slight chance that one of the arguments may be dropped during the future development, consider using <code>*</code>.</p>
+
 </div>
 </div>
 </div>
@@ -12635,14 +12636,14 @@ This should be true
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_person_details</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">is_gangster</span><span class="p">,</span> <span class="n">is_hacker</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">func_with_loads_of_args</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">arg4</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">arg5</span><span class="o">=</span><span class="s1">&#39;boom&#39;</span><span class="p">):</span>
     <span class="k">pass</span>
 
-<span class="c1"># This won&#39;t work anymore because only keyword arguments allowed after *</span>
-<span class="c1"># show_person_details(&#39;John Doe&#39;, True, False, 83)</span>
+<span class="c1"># This won&#39;t work because only keyword arguments allowed after *</span>
+<span class="c1">#func_with_loads_of_args(&#39;John Doe&#39;, 1, 2)</span>
 
 <span class="c1"># This is ok</span>
-<span class="n">show_person_details</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="n">is_gangster</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_hacker</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">83</span><span class="p">)</span>
+<span class="n">func_with_loads_of_args</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="n">arg4</span><span class="o">=</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">arg5</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="s1">&#39;foo bar&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>

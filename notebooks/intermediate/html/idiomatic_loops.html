@@ -12450,7 +12450,7 @@ c 30 True
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;a&#39;: 10, &#39;c&#39;: 30, &#39;b&#39;: 20}
+<pre>{&#39;a&#39;: 10, &#39;b&#39;: 20, &#39;c&#39;: 30}
 </pre>
 </div>
 </div>
@@ -12497,10 +12497,9 @@ c 30 True
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">val</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;python&#39;</span><span class="p">:</span>
-            <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="k">break</span>
+    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;python&#39;</span><span class="p">:</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">break</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Nope, couldn&#39;t find.&quot;</span><span class="p">)</span>
 </pre></div>
@@ -12524,9 +12523,8 @@ c 30 True
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">val</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;python&#39;</span><span class="p">:</span>
-            <span class="k">break</span>
+    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;python&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Nope, couldn&#39;t find.&quot;</span><span class="p">)</span>
 </pre></div>

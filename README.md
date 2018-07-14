@@ -77,8 +77,15 @@ Python is a powerful language which contains many features that are not present 
 
 #### Playing with the web
 * requests
+* testing requests with responses
 * beautifulsoup4
 * selenium
 
-#### Automating excel stuff
-* openpyxl
+#### Communicating with databases
+* SQLAlchemy
+
+#### Working with documents
+* excel
+	* openpyxl
+* pdf
+	* pdfrw / PyPDF2

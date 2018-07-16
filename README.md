@@ -14,9 +14,9 @@ If you can not access Python and/or Jupyter Notebook on your machine, you can st
 
 #### Usage
 
-1. Clone or download the repository.
+1. Clone or download this repository.
 2. Run `jupyter notebook` command in your command line in the repository directory.
-3. Jupyter Notebook session will open in your browser and you can start navigating through the materials.
+3. Jupyter Notebook session will open in the browser and you can start navigating through the materials.
 
 #### Contributing
 See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRIBUTING.md) guide.
@@ -47,7 +47,7 @@ See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRI
 ## Intermediate
 
 #### Idiomatic Python
-Python is a powerful language which contains many features that are not present in most other programming languages. Idiomatic section will cover some of these Pythonic features in detail. These materials are especially useful for people who have background with other programming languages.
+Python is a powerful language which contains many features not presented in most other programming languages. Idiomatic section will cover some of these Pythonic features in detail. These materials are especially useful for people with background in other programming languages.
 
 1. [Idiomatic loops](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_loops.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_loops.ipynb)
 1. [Idiomatic dictionaries](http://htmlpreview.github.com/?https://github.com/jerry-git/learn-python3/blob/master/notebooks/intermediate/html/idiomatic_dicts.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/idiomatic_dicts.ipynb)

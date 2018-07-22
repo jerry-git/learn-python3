@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" alt="logo"/>
+</p>
+
 # Learn Python 3
 
 [![Build Status](https://travis-ci.org/jerry-git/learn-python3.svg?branch=master)](https://travis-ci.org/jerry-git/learn-python3)
@@ -89,3 +93,7 @@ Python is a powerful language which contains many features not presented in most
 	* openpyxl
 * pdf
 	* pdfrw / PyPDF2
+
+
+## Credits
+* Logo: Abdur-Rahmaan Janhangeer, [@Abdur-rahmaanJ](https://github.com/Abdur-rahmaanJ)

@@ -11843,11 +11843,11 @@ show=false;
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Requirement already satisfied: pytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (3.5.0)
 Requirement already satisfied: ipytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (0.2.2)
-Requirement already satisfied: py&gt;=1.5.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.5.3)
-Requirement already satisfied: attrs&gt;=17.4.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (17.4.0)
 Requirement already satisfied: pluggy&lt;0.7,&gt;=0.5 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (0.6.0)
 Requirement already satisfied: six&gt;=1.10.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.11.0)
 Requirement already satisfied: more-itertools&gt;=4.0.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (4.1.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (17.4.0)
+Requirement already satisfied: py&gt;=1.5.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.5.3)
 Requirement already satisfied: setuptools in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (39.0.1)
 </pre>
 </div>
@@ -12215,13 +12215,88 @@ None
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Fixture-scope">Fixture scope<a class="anchor-link" href="#Fixture-scope">&#182;</a></h2>
+<h3 id="tmpdir"><a href="https://docs.pytest.org/en/latest/tmpdir.html#the-tmpdir-fixture"><code>tmpdir</code></a><a class="anchor-link" href="#tmpdir">&#182;</a></h3><p><a href="https://docs.pytest.org/en/latest/tmpdir.html#the-tmpdir-fixture"><code>tmpdir</code></a> fixture provides functionality for creating temporary files and directories.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">word_count_of_txt_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">run_pytest</span>[clean] &#39;-s&#39;
+
+def test_word_count(tmpdir):
+    test_file = tmpdir.join(&#39;test.txt&#39;)
+    test_file.write(&#39;This is example content of seven words&#39;)
+    res = word_count_of_txt_file(str(test_file)) # str returns the path
+    assert res == 7
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>=========================================================== test session starts ===========================================================
+platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
+rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
+plugins: nbval-0.9.0
+collected 1 item
+
+pytest_fixtures.py .
+
+============================================================ warnings summary =============================================================
+None
+  Module already imported so cannot be rewritten: nbval
+
+-- Docs: http://doc.pytest.org/en/latest/warnings.html
+================================================== 1 passed, 1 warnings in 0.03 seconds ===================================================
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Fixture-scope">Fixture scope<a class="anchor-link" href="#Fixture-scope">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># scope is function also by default</span>
@@ -12245,7 +12320,7 @@ None
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">run_pytest</span>[clean] &#39;-s&#39;
@@ -12311,7 +12386,7 @@ None
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
@@ -12328,7 +12403,7 @@ None
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">run_pytest</span>[clean] &#39;-s&#39;
@@ -12390,7 +12465,7 @@ None
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -12405,7 +12480,7 @@ None
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">run_pytest</span>[clean] &#39;-s&#39;
@@ -12448,7 +12523,7 @@ None
   Module already imported so cannot be rewritten: nbval
 
 -- Docs: http://doc.pytest.org/en/latest/warnings.html
-================================================== 2 passed, 1 warnings in 0.02 seconds ===================================================
+================================================== 2 passed, 1 warnings in 0.03 seconds ===================================================
 </pre>
 </div>
 </div>

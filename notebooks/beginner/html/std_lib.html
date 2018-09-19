@@ -11848,11 +11848,11 @@ show=false;
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>local now: 2018-09-19 22:00:35.202267
-utc now: 2018-09-19 20:00:35.202567
-2018 9 19 22 0 35
+<pre>local now: 2018-09-19 22:44:15.396930
+utc now: 2018-09-19 20:44:15.397085
+2018 9 19 22 44 15
 date: 2018-09-19
-time: 22:00:35.202267
+time: 22:44:15.396930
 </pre>
 </div>
 </div>
@@ -11896,8 +11896,8 @@ time: 22:00:35.202267
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2018/09/19-22:00:35
-date: 2018-09-19 time:22:00:35
+<pre>2018/09/19-22:44:15
+date: 2018-09-19 time:22:44:15
 </pre>
 </div>
 </div>
@@ -11984,7 +11984,7 @@ date: 2018-09-19 time:22:00:35
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>tomorrow this time: 2018-09-20 22:00:35.202267
+<pre>tomorrow this time: 2018-09-20 22:44:15.396930
 tomorrow - now = 1 day, 0:00:00
 days: 1, seconds: 0
 total seconds: 86400.0
@@ -12077,10 +12077,10 @@ total seconds: 86400.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>naive utc now: 2018-09-19 20:00:36.074664, tzinfo: None
-utc now: 2018-09-19 20:00:36.074664+00:00, tzinfo: UTC
-Paris: 2018-09-19 22:00:36.074664+02:00, tzinfo: Europe/Paris
-New York: 2018-09-19 16:00:36.074664-04:00, tzinfo: America/New_York
+<pre>naive utc now: 2018-09-19 20:44:16.308229, tzinfo: None
+utc now: 2018-09-19 20:44:16.308229+00:00, tzinfo: UTC
+Paris: 2018-09-19 22:44:16.308229+02:00, tzinfo: Europe/Paris
+New York: 2018-09-19 16:44:16.308229-04:00, tzinfo: America/New_York
 </pre>
 </div>
 </div>
@@ -12238,12 +12238,56 @@ ZeroDivisionError: division by zero
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2018-09-19 22:00:36,127 | MyLogger     | WARNING    | Something bad is going to happen
-2018-09-19 22:00:36,128 | MyLogger     | ERROR      | Uups, it already happened
+<pre>2018-09-19 22:44:16,365 | MyLogger     | WARNING    | Something bad is going to happen
+2018-09-19 22:44:16,366 | MyLogger     | ERROR      | Uups, it already happened
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Logging-to-a-file">Logging to a file<a class="anchor-link" href="#Logging-to-a-file">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="c1"># This is only required for Jupyter notebook environment</span>
+<span class="kn">from</span> <span class="nn">importlib</span> <span class="k">import</span> <span class="n">reload</span>
+<span class="n">reload</span><span class="p">(</span><span class="n">logging</span><span class="p">)</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;MyFileLogger&#39;</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s define a file_handler for our logger</span>
+<span class="n">log_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s1">&#39;my_log.txt&#39;</span><span class="p">)</span>
+<span class="n">file_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">log_path</span><span class="p">)</span>
+
+<span class="c1"># And a nice format</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> | </span><span class="si">%(name)-12s</span><span class="s1"> | </span><span class="si">%(levelname)-10s</span><span class="s1"> | </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">file_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
+
+<span class="c1"># If you want to see it also in the console, add another handler for it</span>
+<span class="c1"># logger.addHandler(logging.StreamHandler())</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Oops something is going to happen&#39;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;John Doe visits our place&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
 </div>
 </div>
 
@@ -12258,7 +12302,7 @@ ZeroDivisionError: division by zero
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -12284,8 +12328,8 @@ ZeroDivisionError: division by zero
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>random integer between 1-100: 63
-random float between 0-1: 0.11984811411151686
+<pre>random integer between 1-100: 33
+random float between 0-1: 0.10137384902353497
 </pre>
 </div>
 </div>
@@ -12305,7 +12349,7 @@ random float between 0-1: 0.11984811411151686
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -12367,7 +12411,7 @@ random float between 0-1: 0.11984811411151686
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -12420,7 +12464,7 @@ numbers: [&#39;8&#39;, &#39;1&#39;, &#39;2&#39;, &#39;5&#39;, &#39;0&#39;, &#39;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>

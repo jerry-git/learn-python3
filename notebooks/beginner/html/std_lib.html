@@ -11848,11 +11848,11 @@ show=false;
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>local now: 2018-07-08 12:07:23.620463
-utc now: 2018-07-08 10:07:23.620661
-2018 7 8 12 7 23
-date: 2018-07-08
-time: 12:07:23.620463
+<pre>local now: 2018-09-19 22:00:35.202267
+utc now: 2018-09-19 20:00:35.202567
+2018 9 19 22 0 35
+date: 2018-09-19
+time: 22:00:35.202267
 </pre>
 </div>
 </div>
@@ -11896,8 +11896,8 @@ time: 12:07:23.620463
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2018/07/08-12:07:23
-date: 2018-07-08 time:12:07:23
+<pre>2018/09/19-22:00:35
+date: 2018-09-19 time:22:00:35
 </pre>
 </div>
 </div>
@@ -11984,7 +11984,7 @@ date: 2018-07-08 time:12:07:23
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>tomorrow this time: 2018-07-09 12:07:23.620463
+<pre>tomorrow this time: 2018-09-20 22:00:35.202267
 tomorrow - now = 1 day, 0:00:00
 days: 1, seconds: 0
 total seconds: 86400.0
@@ -12077,10 +12077,10 @@ total seconds: 86400.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>naive utc now: 2018-07-08 10:07:24.490800, tzinfo: None
-utc now: 2018-07-08 10:07:24.490800+00:00, tzinfo: UTC
-Paris: 2018-07-08 12:07:24.490800+02:00, tzinfo: Europe/Paris
-New York: 2018-07-08 06:07:24.490800-04:00, tzinfo: America/New_York
+<pre>naive utc now: 2018-09-19 20:00:36.074664, tzinfo: None
+utc now: 2018-09-19 20:00:36.074664+00:00, tzinfo: UTC
+Paris: 2018-09-19 22:00:36.074664+02:00, tzinfo: Europe/Paris
+New York: 2018-09-19 16:00:36.074664-04:00, tzinfo: America/New_York
 </pre>
 </div>
 </div>
@@ -12153,13 +12153,60 @@ This is critical
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Formatting-log-entries">Formatting log entries<a class="anchor-link" href="#Formatting-log-entries">&#182;</a></h3>
+<h3 id="Logging-expections">Logging expections<a class="anchor-link" href="#Logging-expections">&#182;</a></h3><p>There's a neat <code>exception</code> function in <code>logging</code> module which will automatically log the stack trace in addition to user defined log entry.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">path_calculation</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;All went south in my calculation&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>ERROR:root:All went south in my calculation
+Traceback (most recent call last):
+  File &#34;&lt;ipython-input-8-ccd7d25e79b7&gt;&#34;, line 2, in &lt;module&gt;
+    path_calculation = 1 / 0
+ZeroDivisionError: division by zero
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Formatting-log-entries">Formatting log entries<a class="anchor-link" href="#Formatting-log-entries">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -12191,8 +12238,8 @@ This is critical
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2018-07-08 12:07:24,540 | MyLogger     | WARNING    | Something bad is going to happen
-2018-07-08 12:07:24,541 | MyLogger     | ERROR      | Uups, it already happened
+<pre>2018-09-19 22:00:36,127 | MyLogger     | WARNING    | Something bad is going to happen
+2018-09-19 22:00:36,128 | MyLogger     | ERROR      | Uups, it already happened
 </pre>
 </div>
 </div>
@@ -12211,7 +12258,7 @@ This is critical
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -12237,8 +12284,8 @@ This is critical
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>random integer between 1-100: 35
-random float between 0-1: 0.09367732583402133
+<pre>random integer between 1-100: 63
+random float between 0-1: 0.11984811411151686
 </pre>
 </div>
 </div>
@@ -12258,7 +12305,7 @@ random float between 0-1: 0.09367732583402133
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -12320,7 +12367,7 @@ random float between 0-1: 0.09367732583402133
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -12373,7 +12420,7 @@ numbers: [&#39;8&#39;, &#39;1&#39;, &#39;2&#39;, &#39;5&#39;, &#39;0&#39;, &#39;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>

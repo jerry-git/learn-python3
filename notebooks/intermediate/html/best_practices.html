@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>tmp_file_io</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>tmp_best_practices</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11799,7 +11799,15 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="File-I/O"><a href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">File I/O</a><a class="anchor-link" href="#File-I/O">&#182;</a></h1><p>Reading and writing files.</p>
+<h1 id="Best-practices-in-development">Best practices in development<a class="anchor-link" href="#Best-practices-in-development">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Test-your-code">Test your code<a class="anchor-link" href="#Test-your-code">&#182;</a></h2><p><img style="float: left;" src="../img/testing.png"></p>
 
 </div>
 </div>
@@ -11808,240 +11816,227 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Working-with-paths">Working with paths<a class="anchor-link" href="#Working-with-paths">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">current_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="s1">&#39;file_io.ipynb&#39;</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;current file: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">current_file</span><span class="p">))</span>
-<span class="c1"># Note: in .py files you can get the path of current file by __file__</span>
-
-<span class="n">current_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">current_file</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;current directory: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">current_dir</span><span class="p">))</span>
-<span class="c1"># Note: in .py files you can get the dir of current file by os.path.dirname(__file__)</span>
-
-<span class="n">data_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">current_dir</span><span class="p">),</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;data directory: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data_dir</span><span class="p">))</span>
-</pre></div>
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3><ul>
+<li>No surprises (especially in production)</li>
+<li>Make sure that everything works as expected</li>
+<li>Make sure that old stuff works as expected after introducing new features (regression)</li>
+<li>Tests give you confidence while refactoring</li>
+<li>It documents how your implementation is used </li>
+<li>...</li>
+</ul>
 
 </div>
 </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>current file: /Users/jerry/github/jerry-git/learn-python3/notebooks/beginner/notebooks/file_io.ipynb
-current directory: /Users/jerry/github/jerry-git/learn-python3/notebooks/beginner/notebooks
-data directory: /Users/jerry/github/jerry-git/learn-python3/notebooks/beginner/data
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Checking-if-path-exists">Checking if path exists<a class="anchor-link" href="#Checking-if-path-exists">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;exists: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;is file: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;is directory: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)))</span>
-</pre></div>
+<h3 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h3><h4 id="pytest"><a href="https://docs.pytest.org/en/latest/"><code>pytest</code></a><a class="anchor-link" href="#pytest">&#182;</a></h4><p>There's <a href="https://docs.python.org/3/library/unittest.html"><code>unittest</code></a> module in Python Standard Library but the go-to test runner nowadays is definitely <code>pytest</code>.</p>
+<p>Some reasons to use <code>pytest</code>:</p>
+<ul>
+<li><a href="https://docs.pytest.org/en/latest/fixture.html#fixture"><code>fixtures</code></a> for writing reusable testing code</li>
+<li><a href="https://docs.pytest.org/en/latest/example/markers.html"><code>markers</code></a> for splitting tests to different groups (e.g. smoke, run only on CI machine, etc) or skipping tests in certain conditions</li>
+<li><a href="https://docs.pytest.org/en/latest/goodpractices.html#test-discovery">Automatic test discovery</a></li>
+<li><a href="https://docs.pytest.org/en/latest/customize.html">Configurability</a></li>
+<li>Active development of plugins, to mention a few:<ul>
+<li><a href="https://pytest-cov.readthedocs.io/en/latest/"><code>pytest-cov</code></a> for coverage reporting</li>
+<li><a href="https://github.com/pytest-dev/pytest-xdist"><code>pytest-xdist</code></a> for speeding up test suit run time with parallelization</li>
+<li>see <a href="https://github.com/pytest-dev">complete list</a> of plugins maintained by <code>pytest</code></li>
+</ul>
+</li>
+<li>Ease of <a href="https://docs.pytest.org/en/latest/writing_plugins.html">writing own plugins</a></li>
+</ul>
 
 </div>
 </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>exists: True
-is file: False
-is directory: True
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Reading-files">Reading files<a class="anchor-link" href="#Reading-files">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;simple_file.txt&#39;</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">simple_file</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">simple_file</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-</pre></div>
+<h4 id="tox"><a href="https://tox.readthedocs.io/en/latest/"><code>tox</code></a><a class="anchor-link" href="#tox">&#182;</a></h4><p><code>tox</code> makes it simple to test your code against different Python interpreter/language and dependency versions. This is important when you're writing software which should support different Python versions, which is usually the case with library-like packages. On the other hand, if you're developing, say, a web application which will be deployed to a known target platform, testing against multiple different versions is not necessary. However, <code>tox</code> makes it also possible to configure, for example, linting and building of docs as part of <code>tox</code> run. Thus, it <code>tox</code> may simplify the development workflow significantly by wrapping multiple different operations under single command.</p>
 
 </div>
 </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>First line
-Second line
-Third
-And so the story goes!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="https://docs.python.org/3/reference/compound_stmts.html#the-with-statement"><code>with</code></a> statement is for obtaining a <a href="https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers">context manager</a> that will be used as an execution context for the commands inside the <code>with</code>. Context managers guarantee that certain operations are done when exiting the context.</p>
-<p>In this case, the context manager guarantees that <code>simple_file.close()</code> is implicitly called when exiting the context. This is a way to make developers life easier: you don't have to remember to explicitly close the file you openened nor be worried about an exception occuring while the file is open. Unclosed file maybe a source of a resource leak. Thus, prefer using <code>with open()</code> structure always with file I/O.</p>
-<p>To have an example, the same as above without the <code>with</code>.</p>
+<h2 id="Write-high-quality-code">Write high quality code<a class="anchor-link" href="#Write-high-quality-code">&#182;</a></h2><p><img style="float: left;" src="../img/high_quality_code.png"></p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;simple_file.txt&#39;</span><span class="p">)</span>
-
-<span class="c1"># THIS IS NOT THE PREFERRED WAY</span>
-<span class="n">simple_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">simple_file</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-<span class="n">simple_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># This has to be called explicitly </span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>First line
-Second line
-Third
-And so the story goes!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Writing-files">Writing files<a class="anchor-link" href="#Writing-files">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;new_file.txt&#39;</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">new_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">my_file</span><span class="p">:</span>
-    <span class="n">my_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is my first file that I wrote with Python.&#39;</span><span class="p">)</span>
-</pre></div>
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3><ul>
+<li>Easy to read</li>
+<li>Better maintainability</li>
+</ul>
 
 </div>
 </div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now go and check that there is a new_file.txt in the data directory. After that you can delete the file by:</p>
-
+<h3 id="Tooling---code-formatters">Tooling - code formatters<a class="anchor-link" href="#Tooling---code-formatters">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">new_file_path</span><span class="p">):</span>  <span class="c1"># make sure it&#39;s there</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">new_file_path</span><span class="p">)</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling---linters">Tooling - linters<a class="anchor-link" href="#Tooling---linters">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling---pre-commit">Tooling - pre-commit<a class="anchor-link" href="#Tooling---pre-commit">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Structure-your-code">Structure your code<a class="anchor-link" href="#Structure-your-code">&#182;</a></h2><p><img style="float: left;" src="../img/bad_code.jpg"></p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Structure-your-projects">Structure your projects<a class="anchor-link" href="#Structure-your-projects">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="One-environment-per-project">One environment per project<a class="anchor-link" href="#One-environment-per-project">&#182;</a></h2><p><img style="float: left;" src="../img/virtualenvs.jpg"></p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Use-continuous-integration">Use continuous integration<a class="anchor-link" href="#Use-continuous-integration">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Utilize-the-capabitilies-of-your-editor">Utilize the capabitilies of your editor<a class="anchor-link" href="#Utilize-the-capabitilies-of-your-editor">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Use-existing-solutions">Use existing solutions<a class="anchor-link" href="#Use-existing-solutions">&#182;</a></h2><p><img style="float: left;" src="../img/ci.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>std lib, Pypi</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Use-Cookiecutter">Use Cookiecutter<a class="anchor-link" href="#Use-Cookiecutter">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Use-logging-instead-of-prints">Use logging instead of prints<a class="anchor-link" href="#Use-logging-instead-of-prints">&#182;</a></h2><p><img style="float: left;" src="../img/prints.jpg"></p>
+
+</div>
+</div>
 </div>
     </div>
   </div>

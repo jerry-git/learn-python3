@@ -1,0 +1,2 @@
+2018-09-21 23:17:54,486 | MyFileLogger | WARNING    | Oops something is going to happen
+2018-09-21 23:17:54,486 | MyFileLogger | ERROR      | John Doe visits our place

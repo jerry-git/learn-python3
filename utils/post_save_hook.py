@@ -29,7 +29,7 @@ TOGGLE_OUTPUT_BTN = {
         "<script>\n", "  function toggle() {\n",
         "    show ? $('div.output').hide('200') : $('div.output').show('200')\n",
         "    show = !show\n", "  }\n", "\n",
-        "  $( document ).ready(function(){\n", "    show=false;\n",
+        "  $( document ).ready(function(){\n", "show=false;\n",
         "    $('div.output').hide()\n", "  });\n", "</script>\n", "\n",
         "<form action=\"javascript:toggle()\" style=\"text-align:center;\">\n",
         "  <input type=\"submit\" id=\"toggleButton\" value=\"Toggle output 🐍\" \n",
@@ -67,7 +67,7 @@ def post_save(model, os_path, contents_manager):
         source = tmp_name
 
     if SAVE_PY:
-        out_dir_py = os.path.join(dir_, 'py')
+        out_dir_py = os.path.join(os.path.dirname(dir_), 'py')
         os.makedirs(out_dir_py, exist_ok=True)
         cmd = 'jupyter nbconvert --to python --output-dir {} --output {}.py {}'.format(
             out_dir_py, out_file_base, source)
@@ -83,7 +83,7 @@ def post_save(model, os_path, contents_manager):
                 tmp_source.write(json.dumps(content))
                 tmp_source.truncate()
 
-        out_dir_html = os.path.join(dir_, 'html')
+        out_dir_html = os.path.join(os.path.dirname(dir_), 'html')
         os.makedirs(out_dir_html, exist_ok=True)
         cmd = 'jupyter nbconvert --to html --output-dir {} --output {}.html {}'.format(
             out_dir_html, out_file_base, source)
@@ -93,6 +93,5 @@ def post_save(model, os_path, contents_manager):
         tmp_file = os.path.join(dir_, tmp_name)
         if os.path.exists(tmp_file):
             os.remove(tmp_file)
-
 
 c.FileContentsManager.post_save_hook = post_save

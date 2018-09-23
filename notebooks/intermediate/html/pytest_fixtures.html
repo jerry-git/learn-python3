@@ -11820,7 +11820,7 @@ show=false;
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Let&#39;s make sure pytest and ipytest packages are installed</span>
 <span class="c1"># ipytest is required for running pytest inside Jupyter notebooks</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install pytest ipytest&gt;<span class="o">=</span><span class="m">0</span>.3.0
+<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install pytest <span class="s1">&#39;ipytest&gt;=0.3.0&#39;</span>
 
 <span class="kn">import</span> <span class="nn">pytest</span>
 <span class="kn">from</span> <span class="nn">ipytest</span> <span class="k">import</span> <span class="n">magics</span><span class="p">,</span> <span class="n">clean_tests</span>
@@ -11828,6 +11828,31 @@ show=false;
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: pytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (3.5.0)
+Requirement already satisfied: ipytest&gt;=0.3.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (0.3.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (17.4.0)
+Requirement already satisfied: pluggy&lt;0.7,&gt;=0.5 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (0.6.0)
+Requirement already satisfied: setuptools in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (39.0.1)
+Requirement already satisfied: py&gt;=1.5.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.5.3)
+Requirement already satisfied: more-itertools&gt;=4.0.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (4.1.0)
+Requirement already satisfied: six&gt;=1.10.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.11.0)
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -11883,7 +11908,7 @@ def test_something_with_executable(executable):
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>=================================================================================== test session starts ====================================================================================
+<pre>================================================================================ test session starts =================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
 rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
@@ -11893,7 +11918,7 @@ pytest_fixtures.py /foo/bar.txt
 ./bar/baz.txt
 .
 
-================================================================================= 2 passed in 0.02 seconds =================================================================================
+============================================================================== 2 passed in 0.02 seconds ==============================================================================
 </pre>
 </div>
 </div>
@@ -11961,7 +11986,7 @@ class TestMyStuff:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>=================================================================================== test session starts ====================================================================================
+<pre>================================================================================ test session starts =================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
 rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
@@ -11974,12 +11999,12 @@ my_fixture is used
 here we use also other_fixture which returns: FOO
 .
 
-===================================================================================== warnings summary =====================================================================================
+================================================================================== warnings summary ==================================================================================
 None
   Module already imported so cannot be rewritten: nbval
 
 -- Docs: http://doc.pytest.org/en/latest/warnings.html
-=========================================================================== 2 passed, 1 warnings in 0.03 seconds ===========================================================================
+======================================================================== 2 passed, 1 warnings in 0.02 seconds ========================================================================
 </pre>
 </div>
 </div>
@@ -12068,7 +12093,7 @@ def test_get_env_var_or_none_with_missing_env_var():
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>=================================================================================== test session starts ====================================================================================
+<pre>================================================================================ test session starts =================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
 rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
@@ -12076,12 +12101,12 @@ collected 2 items
 
 pytest_fixtures.py ..
 
-===================================================================================== warnings summary =====================================================================================
+================================================================================== warnings summary ==================================================================================
 None
   Module already imported so cannot be rewritten: nbval
 
 -- Docs: http://doc.pytest.org/en/latest/warnings.html
-=========================================================================== 2 passed, 1 warnings in 0.03 seconds ===========================================================================
+======================================================================== 2 passed, 1 warnings in 0.02 seconds ========================================================================
 </pre>
 </div>
 </div>
@@ -12162,7 +12187,7 @@ def test_some_class(fake_some_class):
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>=================================================================================== test session starts ====================================================================================
+<pre>================================================================================ test session starts =================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
 rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
@@ -12172,12 +12197,12 @@ pytest_fixtures.py fake value
 This is modified truth
 .
 
-===================================================================================== warnings summary =====================================================================================
+================================================================================== warnings summary ==================================================================================
 None
   Module already imported so cannot be rewritten: nbval
 
 -- Docs: http://doc.pytest.org/en/latest/warnings.html
-=========================================================================== 1 passed, 1 warnings in 0.02 seconds ===========================================================================
+======================================================================== 1 passed, 1 warnings in 0.02 seconds ========================================================================
 </pre>
 </div>
 </div>
@@ -12239,7 +12264,7 @@ def test_word_count(tmpdir):
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>=================================================================================== test session starts ====================================================================================
+<pre>================================================================================ test session starts =================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
 rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
@@ -12247,12 +12272,12 @@ collected 1 item
 
 pytest_fixtures.py .
 
-===================================================================================== warnings summary =====================================================================================
+================================================================================== warnings summary ==================================================================================
 None
   Module already imported so cannot be rewritten: nbval
 
 -- Docs: http://doc.pytest.org/en/latest/warnings.html
-=========================================================================== 1 passed, 1 warnings in 0.03 seconds ===========================================================================
+======================================================================== 1 passed, 1 warnings in 0.02 seconds ========================================================================
 </pre>
 </div>
 </div>
@@ -12321,7 +12346,7 @@ def test_something_else(func_fixture, module_fixture, session_fixture):
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>=================================================================================== test session starts ====================================================================================
+<pre>================================================================================ test session starts =================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
 rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
@@ -12337,12 +12362,12 @@ func
 func
 .
 
-===================================================================================== warnings summary =====================================================================================
+================================================================================== warnings summary ==================================================================================
 None
   Module already imported so cannot be rewritten: nbval
 
 -- Docs: http://doc.pytest.org/en/latest/warnings.html
-=========================================================================== 2 passed, 1 warnings in 0.02 seconds ===========================================================================
+======================================================================== 2 passed, 1 warnings in 0.02 seconds ========================================================================
 </pre>
 </div>
 </div>
@@ -12403,7 +12428,7 @@ def test_something(some_fixture):
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>=================================================================================== test session starts ====================================================================================
+<pre>================================================================================ test session starts =================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
 rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
@@ -12416,12 +12441,12 @@ test ends here
 this will be run after test execution, you can do e.g. some clean up here
 
 
-===================================================================================== warnings summary =====================================================================================
+================================================================================== warnings summary ==================================================================================
 None
   Module already imported so cannot be rewritten: nbval
 
 -- Docs: http://doc.pytest.org/en/latest/warnings.html
-=========================================================================== 1 passed, 1 warnings in 0.02 seconds ===========================================================================
+======================================================================== 1 passed, 1 warnings in 0.02 seconds ========================================================================
 </pre>
 </div>
 </div>
@@ -12481,7 +12506,7 @@ def test_2():
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>=================================================================================== test session starts ====================================================================================
+<pre>================================================================================ test session starts =================================================================================
 platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
 rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
 plugins: nbval-0.9.0
@@ -12493,12 +12518,12 @@ using my_fixture
 using my_fixture
 .
 
-===================================================================================== warnings summary =====================================================================================
+================================================================================== warnings summary ==================================================================================
 None
   Module already imported so cannot be rewritten: nbval
 
 -- Docs: http://doc.pytest.org/en/latest/warnings.html
-=========================================================================== 2 passed, 1 warnings in 0.02 seconds ===========================================================================
+======================================================================== 2 passed, 1 warnings in 0.02 seconds ========================================================================
 </pre>
 </div>
 </div>

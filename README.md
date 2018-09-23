@@ -63,6 +63,10 @@ Python is a powerful language which contains many features not presented in most
 1. [Efficient use of fixtures](https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/pytest_fixtures.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/notebooks/pytest_fixtures.ipynb)
 1. Other tips and tricks
 
+#### Best practices
+1. A list of best development practices for Python projects. Most of the practices listed here are also applicable for other languages, however the presented tooling focuses mainly on Python.
+[Best practices](https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/best_practices.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/notebooks/best_practices.ipynb)
+
 #### General topics
 1. [Goodies of the Standard Library - part 2](https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/std_lib2.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/notebooks/std_lib2.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/exercises/std_lib2_exercise.ipynb)
 

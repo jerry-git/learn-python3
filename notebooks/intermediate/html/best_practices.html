@@ -11807,6 +11807,70 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="One-virtual-environment-per-project">One virtual environment per project<a class="anchor-link" href="#One-virtual-environment-per-project">&#182;</a></h2><p><img style="float: left;" src="../img/virtualenvs.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3><ul>
+<li>Isolation</li>
+<li>Different projects have different dependency versions</li>
+<li>You don't want to mess up the system Python</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h3><p><code>pipenv</code> is currently the recommended tool for dependency management but <a href="https://packaging.python.org/guides/tool-recommendations/#application-dependency-management">"consider other tools such as pip when pipenv does not meet your use case"</a>. If <code>pipenv</code> doesn't fit your use case, I recommend using <code>virtualenvwrapper</code> for managing virtual environments and <code>pip</code> for package management. On the other hand, if you're working on only a couple of projects, built-in <a href="https://docs.python.org/3/library/venv.html"><code>venv</code></a> will do just fine.</p>
+<h4 id="pipenv"><a href="https://pipenv.readthedocs.io/en/latest/"><code>pipenv</code></a><a class="anchor-link" href="#pipenv">&#182;</a></h4><ul>
+<li>Basically combines <code>pip</code> and <code>virtualenv</code> under single CLI</li>
+<li><a href="https://pipenv.readthedocs.io/en/latest/basics/#example-pipfile">Pipfile</a> which replaces the need for requirements.txt and requirements-dev.txt </li>
+<li><a href="https://pipenv.readthedocs.io/en/latest/basics/#example-pipfile-lock">Pipfile.lock</a> which pins dependencies, this means deterministic builds</li>
+<li>Possibility to visualize the <a href="https://pipenv.readthedocs.io/en/latest/#pipenv-graph">dependency graph</a></li>
+<li><a href="https://pipenv.readthedocs.io/en/latest/advanced/#automatic-python-installation">Compatible with <code>pyenv</code></a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="virtualenvwrapper"><a href="https://virtualenvwrapper.readthedocs.io/en/latest/"><code>virtualenvwrapper</code></a><a class="anchor-link" href="#virtualenvwrapper">&#182;</a></h4><ul>
+<li>If you are using Windows command prompt: <a href="https://pypi.org/project/virtualenvwrapper-win/"><code>virtualenvwrapper-win</code></a></li>
+<li>Like the name suggests, a wrapper around <a href="https://pypi.org/project/virtualenv/"><code>virtualenv</code></a></li>
+<li>Eases the workflow for creating, deleting, and (de)activating your virtual environments</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="pyenv"><a href="https://github.com/pyenv/pyenv"><code>pyenv</code></a><a class="anchor-link" href="#pyenv">&#182;</a></h4><ul>
+<li>Easily change global / per project Python version </li>
+<li>Also a tool for installing different Python versions (also different runtimes available, e.g. <a href="https://pypy.org/">PyPy</a>)</li>
+<li>Useful if you'll need to work with different Python versions</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test-your-code">Test your code<a class="anchor-link" href="#Test-your-code">&#182;</a></h2><p><img style="float: left;" src="../img/testing.png"></p>
 
 </div>
@@ -11821,7 +11885,7 @@ show=false;
 <li>Make sure that everything works as expected</li>
 <li>Make sure that old stuff works as expected after introducing new features (regression)</li>
 <li>Tests give you confidence while refactoring</li>
-<li>It documents how your implementation is used </li>
+<li>Good tests demonstrate the use cases of application, i.e. they also document the implementation  </li>
 <li>...</li>
 </ul>
 
@@ -11855,7 +11919,7 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="tox"><a href="https://tox.readthedocs.io/en/latest/"><code>tox</code></a><a class="anchor-link" href="#tox">&#182;</a></h4><p><code>tox</code> makes it simple to test your code against different Python interpreter/language and dependency versions. This is important when you're writing software which should support different Python versions, which is usually the case with library-like packages. On the other hand, if you're developing, say, a web application which will be deployed to a known target platform, testing against multiple different versions is not necessary. However, <code>tox</code> makes it also possible to configure, for example, linting and building of docs as part of <code>tox</code> run. Thus, it <code>tox</code> may simplify the development workflow significantly by wrapping multiple different operations under single command.</p>
+<h4 id="tox"><a href="https://tox.readthedocs.io/en/latest/"><code>tox</code></a><a class="anchor-link" href="#tox">&#182;</a></h4><p><code>tox</code> makes it simple to test your code against different Python interpreter/runtime and dependency versions. This is important when you're writing software which should support different Python versions, which is usually the case with library-like packages. On the other hand, if you're developing, say, a web application which will be deployed to a known target platform, testing against multiple different versions is usually not necessary. However, <code>tox</code> makes it also possible to configure, for example, linting as part of <code>tox</code> run. Thus, <code>tox</code> may simplify the development workflow significantly by wrapping multiple different operations under a single command.</p>
 
 </div>
 </div>
@@ -11876,6 +11940,79 @@ show=false;
 <h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3><ul>
 <li>Easy to read</li>
 <li>Better maintainability</li>
+<li>Better quality == less bugs</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling---code-formatters">Tooling - code formatters<a class="anchor-link" href="#Tooling---code-formatters">&#182;</a></h3><p><a href="https://www.python.org/dev/peps/pep-0008/?">PEP8</a> (see also <a href="https://pep8.org/">"for humans version"</a>) describes the style guidelines for Python code, you should follow them. Luckily, there are awesome tools that handle this for you while you focus on writing code, not formatting it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="yapf"><a href="https://github.com/google/yapf"><code>yapf</code></a><a class="anchor-link" href="#yapf">&#182;</a></h4><ul>
+<li><a href="https://www.python.org/dev/peps/pep-0008/?">PEP8</a> compliant code that also looks good</li>
+<li>Loads of <a href="https://github.com/google/yapf#knobs">configuration options</a> - but also reasonable defaults</li>
 </ul>
 
 </div>
@@ -11885,31 +12022,13 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Tooling---code-formatters">Tooling - code formatters<a class="anchor-link" href="#Tooling---code-formatters">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Tooling---linters">Tooling - linters<a class="anchor-link" href="#Tooling---linters">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Tooling---pre-commit">Tooling - pre-commit<a class="anchor-link" href="#Tooling---pre-commit">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Structure-your-code">Structure your code<a class="anchor-link" href="#Structure-your-code">&#182;</a></h2><p><img style="float: left;" src="../img/bad_code.jpg"></p>
+<h4 id="black"><a href="https://black.readthedocs.io/en/stable/"><code>black</code></a><a class="anchor-link" href="#black">&#182;</a></h4><ul>
+<li>Note requires Python 3.6+</li>
+<li>Note "This is a beta product" while writing this</li>
+<li>Uncompromising - not as many configuration options as in <code>yapf</code></li>
+<li>Good <a href="https://black.readthedocs.io/en/stable/editor_integration.html">integration with editors</a></li>
+<li>Try it in the <a href="https://black.now.sh">playground</a></li>
+</ul>
 
 </div>
 </div>
@@ -11918,31 +12037,7 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Structure-your-projects">Structure your projects<a class="anchor-link" href="#Structure-your-projects">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="One-environment-per-project">One environment per project<a class="anchor-link" href="#One-environment-per-project">&#182;</a></h2><p><img style="float: left;" src="../img/virtualenvs.jpg"></p>
+<h3 id="Tooling---linters">Tooling - linters<a class="anchor-link" href="#Tooling---linters">&#182;</a></h3><p>Automatic code formatting is great but in addition to that, you should use static analyzer (linter) to detect potential pitfalls in your code.</p>
 
 </div>
 </div>
@@ -11951,7 +12046,10 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
+<h4 id="flake8"><a href="http://flake8.pycqa.org/en/latest/"><code>flake8</code></a><a class="anchor-link" href="#flake8">&#182;</a></h4><ul>
+<li>Wraps <a href="https://pypi.org/project/mccabe/"><code>mccabe</code></a> (complexity checker), <a href="https://pypi.org/project/pycodestyle/"><code>pycodestyle</code></a> (PEP8), and <a href="https://pypi.org/project/pyflakes/"><code>pyflakes</code></a> (error checker) </li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -11959,7 +12057,12 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h3>
+<h4 id="pylint"><a href="https://pylint.readthedocs.io/en/latest/"><code>pylint</code></a><a class="anchor-link" href="#pylint">&#182;</a></h4><ul>
+<li>More verbose compared to <code>flake8</code></li>
+<li>Criticized about the default configuration but is easily configurable</li>
+<li>Gives an overall score</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -11967,7 +12070,10 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Use-continuous-integration">Use continuous integration<a class="anchor-link" href="#Use-continuous-integration">&#182;</a></h2>
+<h4 id="bandit"><a href="https://pypi.org/project/bandit/"><code>bandit</code></a><a class="anchor-link" href="#bandit">&#182;</a></h4><ul>
+<li>Checks for security vulnerabilities</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -11975,7 +12081,138 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
+<h3 id="Tooling---pre-commit">Tooling - pre-commit<a class="anchor-link" href="#Tooling---pre-commit">&#182;</a></h3><h4 id="pre-commit"><a href="https://pre-commit.com/"><code>pre-commit</code></a><a class="anchor-link" href="#pre-commit">&#182;</a></h4><p>Ideally, all project contributors should follow the best practices of the project, let it be e.g. respecting PEP8 or making sure there's no linting errors or security vulnerabilities in their change sets. However, as code formatters and linters are (mainly) local tools, this can not be guaranteed. <code>pre-commit</code> let's you configure (.pre-commit-config.yaml file) a set of hooks that will be run as pre actions to a commit/push. After a developer has called once <code>pre-commit install</code>, these hooks will be then automatically ran prior each commit/push.</p>
+<ul>
+<li>Run formatting before commit</li>
+<li>Fail the commit in case linting errors</li>
+<li>Even exercise the test suite before the code ends up to remote (might be time consuming in most scenarios though)</li>
+<li>Easy to configure <a href="https://pre-commit.com/#new-hooks">your own hooks</a> </li>
+<li>And use the <a href="https://github.com/pre-commit/pre-commit-hooks">existing ones</a></li>
+<li>There's also <a href="https://pre-commit.com/#pre-commit-during-push">pre-push option</a></li>
+<li>Written in Python but supports also other languages, such as Ruby, Go, and Rust</li>
+<li>Less failed CI builds!</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Structure-your-code-and-projects">Structure your code and projects<a class="anchor-link" href="#Structure-your-code-and-projects">&#182;</a></h2><p><img style="float: left;" src="../img/bad_code.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3><ul>
+<li>Package and module structure gives an overview about the project</li>
+<li>Modular design == better reusability</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="How">How<a class="anchor-link" href="#How">&#182;</a></h3><p>Some general guidelines:</p>
+<ul>
+<li>Don't put too much stuff into one module</li>
+<li>Split project into packages</li>
+<li>Be consistent with your naming conventions</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A few words about structuring your projects. If you're developing, say, a relative big business application, it makes sense to separate some of the non-core business logic packages into a separate project and publish that as separate package. This way the "main" repository doesn't get bloated and it's more approachable for newcomers. Additionally, there's a change that you (or someone else) can easily reuse this "separated" package in the future, which is often the case e.g. for different kinds of utility functionalities.</p>
+<p>Let's take a practical example. If your team has two different applications which interact with the same third party, it's beneficial to implement a separate client library for communication with it. This way a change is needed only in one place (in the client library) if the third party decides to make a backwards incompatible change in their API.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h3><h4 id="cookiecutter"><a href="https://cookiecutter.readthedocs.io/en/latest/"><code>cookiecutter</code></a><a class="anchor-link" href="#cookiecutter">&#182;</a></h4><p><img style="float: left;" src="../img/cookiecutter.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Cookiecutter is a tool which let's you create projects from predefined templates.</p>
+<ul>
+<li>Rapid set-up of new projects, no need to copy paste from existing ones</li>
+<li>Consistent development practices across all projects (project structure as well as e.g. <code>pre-commit</code>, <code>tox</code>, and CI configuration)</li>
+<li>You can create one yourself or use some of the <a href="https://cookiecutter.readthedocs.io/en/latest/readme.html#python">existing ones</a></li>
+<li>Written in Python but is applicable for non-Python projects as well, even non-programming related directory and file structures</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Use-continuous-integration-and-deployment">Use continuous integration and deployment<a class="anchor-link" href="#Use-continuous-integration-and-deployment">&#182;</a></h2><p><img style="float: left;" src="../img/ci.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>CI &amp; CD belong to the best practices of software development without controversy, no matter what is the technology stack used for development. From Python point of view, CI is the place where we want to make sure that the other best practices described above are followed. For example, in bigger projects, it may not be even practical/possible to run the full test suite on developer's machine.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3><ul>
+<li>Make sure the tests pass</li>
+<li>CI is the place where it's possible to run also some time consuming tests which the impatient developers prefer to skip on their local machines</li>
+<li>Make sure there's no linting errors</li>
+<li>Ideally, the place to test against all target versions and platforms</li>
+<li>Overall, CI is the last resort for automatically ensuring the quality </li>
+<li>Manual deployments are time consuming and error-prone, CD is automated and deterministic</li>
+<li>You want to automate as much as possible, human time is expensive</li>
+<li>Minimize the time required for code reviews - what could be detected with automatic tools, should be detected by using those tools. Human time is expensive. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h3><p>Tooling depends on which git repository manager option you've chosen and what kind of requirements you have. For example:</p>
+<ul>
+<li>Gitlab has a built-in <a href="https://about.gitlab.com/features/gitlab-ci-cd/">integrated CI/CD</a></li>
+<li>Same for <a href="https://www.atlassian.com/continuous-delivery/continuous-integration-tutorial">BitBucket</a></li>
+<li>If you're using GitHub, see <a href="https://github.com/marketplace/category/continuous-integration">full list of available tools</a></li>
+<li>There's an extensive comparison of different providers in <a href="https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software">wikipedia</a></li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -11991,15 +12228,10 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Use-existing-solutions">Use existing solutions<a class="anchor-link" href="#Use-existing-solutions">&#182;</a></h2><p><img style="float: left;" src="../img/ci.jpg"></p>
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3><ul>
+<li>Efficient and fluent development</li>
+<li>There's plenty of tools to make your daily programming easier, why would you not use them</li>
+</ul>
 
 </div>
 </div>
@@ -12008,15 +12240,17 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>std lib, Pypi</p>
+<h3 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h3><p>As there's a number of different editors and IDEs available, not to mention that everyone has their own preferences, I'll just focus on highlighting some of the features of my favorite IDE, PyCharm, which I highly recommend for Python development.</p>
+<h4 id="PyCharm"><a href="https://www.jetbrains.com/help/pycharm/quick-start-guide.html">PyCharm</a><a class="anchor-link" href="#PyCharm">&#182;</a></h4><ul>
+<li>Good integration with <code>pytest</code>, e.g. run single tests / test classes / test modules</li>
+<li>Git integration (in case you don't like command line)</li>
+<li>Easy to configure to use automatic formatting, e.g <a href="https://github.com/ambv/black#pycharm"><code>black</code></a></li>
+<li>Intuitive searching capabilities</li>
+<li>Refactoring features</li>
+<li>Debugger</li>
+<li>Jupyter Notebook integration</li>
+<li>Free community edition already contains all you need</li>
+</ul>
 
 </div>
 </div>
@@ -12025,7 +12259,8 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Use-Cookiecutter">Use Cookiecutter<a class="anchor-link" href="#Use-Cookiecutter">&#182;</a></h2>
+<h2 id="Use-existing-solutions">Use existing solutions<a class="anchor-link" href="#Use-existing-solutions">&#182;</a></h2><p><img style="float: left;" src="../img/reinvent.jpg"></p>
+
 </div>
 </div>
 </div>
@@ -12033,7 +12268,197 @@ show=false;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Use-logging-instead-of-prints">Use logging instead of prints<a class="anchor-link" href="#Use-logging-instead-of-prints">&#182;</a></h2><p><img style="float: left;" src="../img/prints.jpg"></p>
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3><ul>
+<li>Python Standard Library is extensive - and stable!</li>
+<li>There are over 150k packages in <a href="https://pypi.org/">PyPI</a></li>
+<li>Someone has most likely solved the problem you're trying to solve</li>
+<li>Spend 5 minutes doing a google research before starting to solve a new problem, e.g. <a href="https://stackoverflow.com/">stackoverflow</a> is a magical place.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Learn-how-to-debug-efficiently">Learn how to debug efficiently<a class="anchor-link" href="#Learn-how-to-debug-efficiently">&#182;</a></h2><p><img style="float: left;" src="../img/debugging.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why">Why<a class="anchor-link" href="#Why">&#182;</a></h3><ul>
+<li>You won't write completely stable code anyway - impossible looking conditions will occur. </li>
+<li>When something is not working as expected, there are plenty of tools out there to help you figure out what's going on. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling---debuggers">Tooling - debuggers<a class="anchor-link" href="#Tooling---debuggers">&#182;</a></h3><h4 id="pdb"><a href="https://docs.python.org/3/library/pdb.html"><code>pdb</code></a><a class="anchor-link" href="#pdb">&#182;</a></h4><ul>
+<li>Part of the Standard Library</li>
+<li>Sufficient for most use cases</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="ipdb"><a href="https://pypi.org/project/ipdb/"><code>ipdb</code></a><a class="anchor-link" href="#ipdb">&#182;</a></h4><ul>
+<li>Feature rich <code>pdb</code> with similar API</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="pdb++"><a href="https://pypi.org/project/pdbpp/"><code>pdb++</code></a><a class="anchor-link" href="#pdb++">&#182;</a></h4><ul>
+<li>Drop-in replacement for <code>pdb</code> with additional features</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling---profilers">Tooling - profilers<a class="anchor-link" href="#Tooling---profilers">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="gprof2dot"><a href="https://github.com/jrfonseca/gprof2dot"><code>gprof2dot</code></a><a class="anchor-link" href="#gprof2dot">&#182;</a></h4><ul>
+<li>Find the performance bottlenecks of your application via illustrative graphs</li>
+<li>If you're using <code>pytest</code> (like you should), see also <a href="https://pypi.org/project/pytest-profiling/"><code>pytest-profiling</code></a> which is powered by <code>gprof2dot</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="py-spy"><a href="https://github.com/benfred/py-spy"><code>py-spy</code></a><a class="anchor-link" href="#py-spy">&#182;</a></h4><ul>
+<li>Profile running Python program without the need for modifying the source code or restarting the target process</li>
+<li>Potential tool for identifying problems of e.g. a web application in production </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="objgraph"><a href="https://mg.pov.lt/objgraph/"><code>objgraph</code></a><a class="anchor-link" href="#objgraph">&#182;</a></h4><ul>
+<li>Graphs which are useful while hunting memory leaks</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling---runtime-error-tracking">Tooling - runtime error tracking<a class="anchor-link" href="#Tooling---runtime-error-tracking">&#182;</a></h3><p>These are especially useful with web applications as you'll get reports - and notifications - of runtime exceptions with full tracebacks and variable values. This information is often enough for identifying the root cause of the problem, which is a huge benefit considering the time required for implementing and deploying the fix.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Sentry"><a href="https://docs.sentry.io/?platform=python">Sentry</a><a class="anchor-link" href="#Sentry">&#182;</a></h4><ul>
+<li>Complete stack traces with relevant variable (<code>locals()</code>) values</li>
+<li>Browser and OS information of the client</li>
+<li>Support for other languages as well</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="rollbar"><a href="https://docs.rollbar.com/docs/python"><code>rollbar</code></a><a class="anchor-link" href="#rollbar">&#182;</a></h4><ul>
+<li>Very similar to sentry</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>While writing this, both sentry and rollbar are free for hobbyist use.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tooling---misc">Tooling - misc<a class="anchor-link" href="#Tooling---misc">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Use-logging-instead-of-prints">Use logging instead of prints<a class="anchor-link" href="#Use-logging-instead-of-prints">&#182;</a></h4><p><img style="float: left;" src="../img/prints.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><a href="https://docs.python.org/3/library/logging.html"><code>logging</code></a> is part of the Standard Library</li>
+<li>With logging you can redirect the output to a file</li>
+<li>Logs are usually the first place to look at after an end user reports an issue</li>
+<li>You can specify the runtime level - no need to remove the debug prints</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="General-guidelines">General guidelines<a class="anchor-link" href="#General-guidelines">&#182;</a></h3><ul>
+<li>Use Python 3, legacy Python (aka 2.7) will <a href="https://pythonclock.org/">retire soon</a></li>
+<li>Develop in branches. Even if you're the only person in the project, branching makes it possible to easily switch between different features / bug fixes.</li>
+<li>If you're not developing alone, practice code reviews. It's one of the best ways to learn for both parties.</li>
+<li>Document your master pieces</li>
+</ul>
 
 </div>
 </div>

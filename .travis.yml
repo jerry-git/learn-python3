@@ -1,15 +1,6 @@
-sudo: false
+os: linux
+dist: focal
 language: python
-
-install:
-- pip install jupyter
-- pip install tox
-- pip install nbval
-- pip install pytest
-
-
-stages:
-  - test
 
 jobs:
   include:
@@ -19,8 +10,8 @@ jobs:
     env: TOXENV=py36
   - python: 3.7
     env: TOXENV=py37
-    dist: xenial
-    sudo: true
+  - python: 3.8
+    env: TOXENV=py38
 
-script:
-- tox
+install: pip install jupyter nbval pytest tox
+script: tox

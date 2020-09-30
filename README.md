@@ -1,25 +1,26 @@
 <p align="center">
-  <img src="logo.png" alt="logo"/>
+  <img src="logo.png" width=600 alt="logo"/>
 </p>
 
-# Learn Python 3
+# Learn Python 3 with Jupyter notebooks 
 
 [![Build Status](https://travis-ci.org/jerry-git/learn-python3.svg?branch=master)](https://travis-ci.org/jerry-git/learn-python3)
 
 ## Introduction
 
-This repository contains a collection of materials for teaching/learning Python 3 (3.5+).
+This repository contains a good collection of materials and exercises for teaching/learning Python 3 (3.5+), what you have to do is just clone and open with juoyter(don't know how to open notebooks in jupyter then see usage section =).
 
 #### Requirements
 * Have Python 3.5 or newer installed. You can check the version by typing `python3 --version` in your command line. You can download the latest Python version from [here](https://www.python.org/downloads/).
-* Have [Jupyter Notebook installed](http://jupyter.readthedocs.io/en/latest/install.html).
+* Have [Jupyter Notebook](http://jupyter.readthedocs.io/en/latest/install.html) installed.
 
 If you can not access Python and/or Jupyter Notebook on your machine, you can still follow the web based materials. However, you should be able to use Jupyter Notebook in order to complete the exercises.
 
 #### Usage
 
 1. Clone or download this repository.
-2. Run `jupyter notebook` command in your command line in the repository directory.
+2. Open your command line and run `pip install jupyter`(this will show error if python is not installed so please check pyhon is installed)
+2. Now, Run `jupyter notebook` command in your command line in the repository directory.
 3. Jupyter Notebook session will open in the browser and you can start navigating through the materials.
 
 #### Contributing
@@ -70,6 +71,7 @@ A list of best development practices for Python projects. Most of the practices 
 #### General topics
 1. [Goodies of the Standard Library - part 2](https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/std_lib2.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/notebooks/std_lib2.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/exercises/std_lib2_exercise.ipynb)
 
+### Topics to be covered
 #### Backlog
 * Sets
 * Generators

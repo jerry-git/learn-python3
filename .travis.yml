@@ -12,6 +12,8 @@ jobs:
     env: TOXENV=py37
   - python: 3.8
     env: TOXENV=py38
+  - python: 3.9
+    env: TOXENV=py39
 
 install: pip install jupyter nbval pytest tox
 script: tox

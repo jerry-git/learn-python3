@@ -1,11 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>tmp_testing2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>tmp_testing2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <style type="text/css">
-    /*!
+  pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+  </style>
+
+
+
+<style type="text/css">
+/*!
 *
 * Twitter Bootstrap
 *
@@ -199,7 +279,6 @@ th {
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6744,15 +6823,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6809,6 +6888,19 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6824,6 +6916,10 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6846,31 +6942,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7355,6 +7451,7 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7367,6 +7464,7 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
+.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8004,7 +8102,8 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8108,7 +8207,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8234,6 +8333,7 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8247,6 +8347,8 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8414,6 +8516,657 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-buysellads:before {
+  content: "\f20d";
+}
+.fa-connectdevelop:before {
+  content: "\f20e";
+}
+.fa-dashcube:before {
+  content: "\f210";
+}
+.fa-forumbee:before {
+  content: "\f211";
+}
+.fa-leanpub:before {
+  content: "\f212";
+}
+.fa-sellsy:before {
+  content: "\f213";
+}
+.fa-shirtsinbulk:before {
+  content: "\f214";
+}
+.fa-simplybuilt:before {
+  content: "\f215";
+}
+.fa-skyatlas:before {
+  content: "\f216";
+}
+.fa-cart-plus:before {
+  content: "\f217";
+}
+.fa-cart-arrow-down:before {
+  content: "\f218";
+}
+.fa-diamond:before {
+  content: "\f219";
+}
+.fa-ship:before {
+  content: "\f21a";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-motorcycle:before {
+  content: "\f21c";
+}
+.fa-street-view:before {
+  content: "\f21d";
+}
+.fa-heartbeat:before {
+  content: "\f21e";
+}
+.fa-venus:before {
+  content: "\f221";
+}
+.fa-mars:before {
+  content: "\f222";
+}
+.fa-mercury:before {
+  content: "\f223";
+}
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "\f224";
+}
+.fa-transgender-alt:before {
+  content: "\f225";
+}
+.fa-venus-double:before {
+  content: "\f226";
+}
+.fa-mars-double:before {
+  content: "\f227";
+}
+.fa-venus-mars:before {
+  content: "\f228";
+}
+.fa-mars-stroke:before {
+  content: "\f229";
+}
+.fa-mars-stroke-v:before {
+  content: "\f22a";
+}
+.fa-mars-stroke-h:before {
+  content: "\f22b";
+}
+.fa-neuter:before {
+  content: "\f22c";
+}
+.fa-genderless:before {
+  content: "\f22d";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-pinterest-p:before {
+  content: "\f231";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}
+.fa-server:before {
+  content: "\f233";
+}
+.fa-user-plus:before {
+  content: "\f234";
+}
+.fa-user-times:before {
+  content: "\f235";
+}
+.fa-hotel:before,
+.fa-bed:before {
+  content: "\f236";
+}
+.fa-viacoin:before {
+  content: "\f237";
+}
+.fa-train:before {
+  content: "\f238";
+}
+.fa-subway:before {
+  content: "\f239";
+}
+.fa-medium:before {
+  content: "\f23a";
+}
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "\f23b";
+}
+.fa-optin-monster:before {
+  content: "\f23c";
+}
+.fa-opencart:before {
+  content: "\f23d";
+}
+.fa-expeditedssl:before {
+  content: "\f23e";
+}
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "\f240";
+}
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "\f241";
+}
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "\f242";
+}
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "\f243";
+}
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "\f244";
+}
+.fa-mouse-pointer:before {
+  content: "\f245";
+}
+.fa-i-cursor:before {
+  content: "\f246";
+}
+.fa-object-group:before {
+  content: "\f247";
+}
+.fa-object-ungroup:before {
+  content: "\f248";
+}
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-sticky-note-o:before {
+  content: "\f24a";
+}
+.fa-cc-jcb:before {
+  content: "\f24b";
+}
+.fa-cc-diners-club:before {
+  content: "\f24c";
+}
+.fa-clone:before {
+  content: "\f24d";
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-hourglass-o:before {
+  content: "\f250";
+}
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "\f251";
+}
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "\f252";
+}
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "\f253";
+}
+.fa-hourglass:before {
+  content: "\f254";
+}
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "\f255";
+}
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "\f256";
+}
+.fa-hand-scissors-o:before {
+  content: "\f257";
+}
+.fa-hand-lizard-o:before {
+  content: "\f258";
+}
+.fa-hand-spock-o:before {
+  content: "\f259";
+}
+.fa-hand-pointer-o:before {
+  content: "\f25a";
+}
+.fa-hand-peace-o:before {
+  content: "\f25b";
+}
+.fa-trademark:before {
+  content: "\f25c";
+}
+.fa-registered:before {
+  content: "\f25d";
+}
+.fa-creative-commons:before {
+  content: "\f25e";
+}
+.fa-gg:before {
+  content: "\f260";
+}
+.fa-gg-circle:before {
+  content: "\f261";
+}
+.fa-tripadvisor:before {
+  content: "\f262";
+}
+.fa-odnoklassniki:before {
+  content: "\f263";
+}
+.fa-odnoklassniki-square:before {
+  content: "\f264";
+}
+.fa-get-pocket:before {
+  content: "\f265";
+}
+.fa-wikipedia-w:before {
+  content: "\f266";
+}
+.fa-safari:before {
+  content: "\f267";
+}
+.fa-chrome:before {
+  content: "\f268";
+}
+.fa-firefox:before {
+  content: "\f269";
+}
+.fa-opera:before {
+  content: "\f26a";
+}
+.fa-internet-explorer:before {
+  content: "\f26b";
+}
+.fa-tv:before,
+.fa-television:before {
+  content: "\f26c";
+}
+.fa-contao:before {
+  content: "\f26d";
+}
+.fa-500px:before {
+  content: "\f26e";
+}
+.fa-amazon:before {
+  content: "\f270";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-map-pin:before {
+  content: "\f276";
+}
+.fa-map-signs:before {
+  content: "\f277";
+}
+.fa-map-o:before {
+  content: "\f278";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-commenting:before {
+  content: "\f27a";
+}
+.fa-commenting-o:before {
+  content: "\f27b";
+}
+.fa-houzz:before {
+  content: "\f27c";
+}
+.fa-vimeo:before {
+  content: "\f27d";
+}
+.fa-black-tie:before {
+  content: "\f27e";
+}
+.fa-fonticons:before {
+  content: "\f280";
+}
+.fa-reddit-alien:before {
+  content: "\f281";
+}
+.fa-edge:before {
+  content: "\f282";
+}
+.fa-credit-card-alt:before {
+  content: "\f283";
+}
+.fa-codiepie:before {
+  content: "\f284";
+}
+.fa-modx:before {
+  content: "\f285";
+}
+.fa-fort-awesome:before {
+  content: "\f286";
+}
+.fa-usb:before {
+  content: "\f287";
+}
+.fa-product-hunt:before {
+  content: "\f288";
+}
+.fa-mixcloud:before {
+  content: "\f289";
+}
+.fa-scribd:before {
+  content: "\f28a";
+}
+.fa-pause-circle:before {
+  content: "\f28b";
+}
+.fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.fa-stop-circle:before {
+  content: "\f28d";
+}
+.fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+.fa-shopping-basket:before {
+  content: "\f291";
+}
+.fa-hashtag:before {
+  content: "\f292";
+}
+.fa-bluetooth:before {
+  content: "\f293";
+}
+.fa-bluetooth-b:before {
+  content: "\f294";
+}
+.fa-percent:before {
+  content: "\f295";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 /*!
 *
@@ -8694,6 +9447,10 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
+div.traceback-wrapper pre.traceback {
+  max-height: 600px;
+  overflow: auto;
+}
 /**
  * Primary styles
  *
@@ -8719,6 +9476,10 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -8750,13 +9511,16 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 991px) {
-  #ipython_notebook {
-    margin-left: 10px;
-  }
-}
 [dir="rtl"] #ipython_notebook {
+  margin-right: 10px;
+  margin-left: 0;
+}
+[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
+  float: right;
+}
+.flex-spacer {
+  flex: 1;
 }
 #noscript {
   width: auto;
@@ -8791,8 +9555,14 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
+span#kernel_logo_widget {
+  margin: 0 10px;
+}
 span#login_widget {
   float: right;
+}
+[dir="rtl"] span#login_widget {
+  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -8908,6 +9678,9 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
+.modal-header {
+  cursor: move;
+}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8928,6 +9701,19 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
+[dir="rtl"] .center-nav form.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] .center-nav .navbar-text {
+  float: right;
+}
+[dir="rtl"] .navbar-inner {
+  text-align: right;
+}
+[dir="rtl"] div.text-left {
+  text-align: right;
+}
 /*!
 *
 * IPython tree view
@@ -8944,34 +9730,42 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
   opacity: 0;
   z-index: 2;
-  width: 12ex;
-  margin-right: -12ex;
+}
+.alternate_upload .btn-xs > input.fileinput {
+  margin: -1px -5px;
 }
 .alternate_upload .btn-upload {
+  position: relative;
   height: 22px;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
+}
+[dir="rtl"] ul#tabs.nav-tabs > li {
+  float: right;
+}
+[dir="rtl"] ul#tabs.nav.nav-tabs {
+  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -8991,15 +9785,13 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons {
+[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
   float: left !important;
+  float: left;
 }
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
+[dir="rtl"] .list_toolbar .col-sm-4,
+[dir="rtl"] .list_toolbar .col-sm-8 {
+  float: right;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9055,7 +9847,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9065,6 +9857,9 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
+}
+[dir="rtl"] .list_item > div input {
+  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9080,6 +9875,14 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
+}
+.item_modified {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+[dir="rtl"] .item_modified.pull-right {
+  float: left !important;
+  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9108,6 +9911,14 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
+[dir="rtl"] .item_buttons.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .item_buttons .kernel-name {
+  margin-left: 7px;
+  float: right;
+}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9133,18 +9944,32 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
+.sort_button {
+  display: inline-block;
+  padding-left: 7px;
+}
+[dir="rtl"] .sort_button.pull-right {
+  float: left !important;
+  float: left;
+}
 #tree-selector {
   padding-right: 0px;
-}
-[dir="rtl"] #tree-selector a {
-  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
+[dir="rtl"] #button-select-all.btn {
+  float: right ;
+}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
+  margin-top: 2px;
+  height: 16px;
+}
+[dir="rtl"] #select-all.pull-left {
+  float: right !important;
+  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9162,6 +9987,12 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
+.folder_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.folder_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9178,6 +10009,12 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
+}
+.notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9197,6 +10034,12 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
+.running_notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.running_notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9214,6 +10057,12 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
+.file_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.file_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9228,8 +10077,11 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
+#new-menu .dropdown-header {
+  font-size: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 3px;
+  margin: -3px 20px 0;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9276,9 +10128,6 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
-}
 .delete-button {
   display: none;
 }
@@ -9286,6 +10135,12 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
+  display: none;
+}
+.move-button {
+  display: none;
+}
+.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9328,6 +10183,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -9342,6 +10203,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
+}
+.dirty-indicator-dirty.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-dirty.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -9358,6 +10225,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator-clean.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -9372,6 +10245,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
+}
+.dirty-indicator-clean:before.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean:before.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -9417,14 +10296,132 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
+.CodeMirror-dialog {
+  background-color: #fff;
+}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -9503,12 +10500,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9521,27 +10526,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -9737,7 +10754,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -9747,11 +10766,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -10005,6 +11037,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10043,7 +11078,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -10203,39 +11238,35 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 .rendered_html ul {
   list-style: disc;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ul ul ul {
   list-style: circle;
-  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
-  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10249,14 +11280,23 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
+  padding: 0px;
+  background-color: #fff;
+}
+.rendered_html code {
+  background-color: #eff0f1;
+}
+.rendered_html p code {
+  padding: 1px 5px;
+}
+.rendered_html pre code {
+  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
-  background-color: #fff;
   color: #000;
   font-size: 100%;
-  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -10264,24 +11304,36 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 1em 2em;
-}
-.rendered_html td,
-.rendered_html th {
-  text-align: left;
+  text-align: right;
   vertical-align: middle;
-  padding: 4px;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
 }
 .rendered_html th {
   font-weight: bold;
+}
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10308,6 +11360,15 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
+}
+.rendered_html .alert {
+  margin-bottom: initial;
+}
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] .rendered_html p {
+  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -10362,8 +11423,17 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered .rendered_html td {
+  max-width: none;
+}
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10500,6 +11570,28 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+.jupyter-keybindings {
+  padding: 1px;
+  line-height: 24px;
+  border-bottom: 1px solid gray;
+}
+.jupyter-keybindings input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.jupyter-keybindings i {
+  padding: 6px;
+}
+.well code {
+  background-color: #ffffff;
+  border-color: #ababab;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10632,6 +11724,152 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
+.tags_button_container {
+  width: 100%;
+  display: flex;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+.tag-container > * {
+  margin: 0 4px;
+}
+.remove-tag-btn {
+  margin-left: 4px;
+}
+.tags-input {
+  display: flex;
+}
+.cell-tag:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  /* Fade to background color of cell toolbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
+}
+.tags-input > * {
+  margin-left: 4px;
+}
+.cell-tag,
+.tags-input input,
+.tags-input button {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+  box-shadow: none;
+  width: inherit;
+  font-size: inherit;
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  display: inline-block;
+}
+.cell-tag:focus,
+.tags-input input:focus,
+.tags-input button:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.cell-tag::-moz-placeholder,
+.tags-input input::-moz-placeholder,
+.tags-input button::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.cell-tag:-ms-input-placeholder,
+.tags-input input:-ms-input-placeholder,
+.tags-input button:-ms-input-placeholder {
+  color: #999;
+}
+.cell-tag::-webkit-input-placeholder,
+.tags-input input::-webkit-input-placeholder,
+.tags-input button::-webkit-input-placeholder {
+  color: #999;
+}
+.cell-tag::-ms-expand,
+.tags-input input::-ms-expand,
+.tags-input button::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+.cell-tag[readonly],
+.tags-input input[readonly],
+.tags-input button[readonly],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  cursor: not-allowed;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button {
+  height: auto;
+}
+select.cell-tag,
+select.tags-input input,
+select.tags-input button {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button,
+select[multiple].cell-tag,
+select[multiple].tags-input input,
+select[multiple].tags-input button {
+  height: auto;
+}
+.cell-tag,
+.tags-input button {
+  padding: 0px 4px;
+}
+.cell-tag {
+  background-color: #fff;
+  white-space: nowrap;
+}
+.tags-input input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10657,16 +11895,28 @@ select[multiple].celltoolbar select {
 .completions select option.context {
   color: #286090;
 }
-#kernel_logo_widget {
-  float: right !important;
-  float: right;
-}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
+}
+[dir="rtl"] #kernel_logo_widget {
+  float: left !important;
+  float: left;
+}
+.modal .modal-body .move-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-items: center;
+}
+.modal .modal-body .move-path .server-root {
+  padding-right: 20px;
+}
+.modal .modal-body .move-path .path-input {
+  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -10688,11 +11938,41 @@ select[multiple].celltoolbar select {
 #menubar .navbar-collapse {
   clear: left;
 }
+[dir="rtl"] #menubar .navbar-toggle {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-collapse {
+  clear: right;
+}
+[dir="rtl"] #menubar .navbar-nav {
+  float: right;
+}
+[dir="rtl"] #menubar .nav {
+  padding-right: 0px;
+}
+[dir="rtl"] #menubar .navbar-nav > li {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-right {
+  float: left !important;
+}
+[dir="rtl"] ul.dropdown-menu {
+  text-align: right;
+  left: auto;
+}
+[dir="rtl"] ul#new-menu.dropdown-menu {
+  right: auto;
+  left: 0;
+}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
+}
+[dir="rtl"] i.menu-icon.pull-right {
+  float: left !important;
+  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -10700,6 +11980,17 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a {
+  padding-left: 2.2em;
+}
+[dir="rtl"] ul#help_menu li a i {
+  margin-right: 0;
+  margin-left: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a i.pull-right {
+  float: left !important;
+  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -10709,6 +12000,10 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
+}
+[dir="rtl"] .dropdown-submenu > .dropdown-menu {
+  right: 100%;
+  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -10727,11 +12022,23 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
+.dropdown-submenu > a:after.fa-pull-left {
+  margin-right: .3em;
+}
+.dropdown-submenu > a:after.fa-pull-right {
+  margin-left: .3em;
+}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
+}
+[dir="rtl"] .dropdown-submenu > a:after {
+  float: left;
+  content: "\f0d9";
+  margin-right: 0;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -10748,6 +12055,10 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
+[dir="rtl"] #notification_area {
+  float: left !important;
+  float: left;
+}
 .indicator_area {
   float: right !important;
   float: right;
@@ -10758,6 +12069,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] .indicator_area {
+  float: left !important;
+  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -10775,6 +12090,12 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
+[dir="rtl"] #kernel_indicator {
+  float: left !important;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid;
+}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -10785,6 +12106,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] #modal_indicator {
+  float: left !important;
+  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -10815,6 +12140,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
+.edit_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.edit_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
+}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -10829,6 +12160,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
+}
+.command_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.command_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -10845,6 +12182,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
+.kernel_idle_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_idle_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10859,6 +12202,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
+}
+.kernel_busy_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_busy_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -10875,6 +12224,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
+.kernel_dead_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_dead_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10889,6 +12244,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
+}
+.kernel_disconnected_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_disconnected_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -11279,27 +12640,46 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  margin-top: 6px;
+  height: 30px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 50%;
+  flex: 1;
 }
 span.save_widget span.filename {
-  height: 1em;
+  height: 100%;
   line-height: 1em;
-  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
+[dir="rtl"] span.save_widget.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] span.save_widget span.filename {
+  margin-left: 0;
+  margin-right: 16px;
+}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
+    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -11343,6 +12723,9 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
+.toolbar-btn-label {
+  margin-left: 6px;
+}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -11362,6 +12745,10 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
+}
+[dir="rtl"] .btn-group > .btn,
+.btn-group-vertical > .btn {
+  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -11512,6 +12899,10 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
+[dir="rtl"] ul.typeahead-list i {
+  margin-left: 0;
+  margin-right: -10px;
+}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -11520,6 +12911,13 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
+}
+ul.typeahead-list  > li > a.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .typeahead-list {
+  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -11531,10 +12929,19 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  display: none;
+  min-width: 20px;
+  color: transparent;
+}
+[dir="rtl"] .no-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .command-shortcut.pull-right {
+  float: left !important;
+  float: left;
 }
 .command-shortcut:before {
-  content: "(command)";
+  content: "(command mode)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11543,6 +12950,10 @@ ul.typeahead-list > li > a {
   padding-right: 3px;
   color: #777777;
 }
+[dir="rtl"] .edit-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -11550,6 +12961,12 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+  border-left: none;
+}
+[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
+  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11602,120 +13019,7 @@ ul.typeahead-list > li > a {
 .terminal-app #terminado-container {
   margin-top: 20px;
 }
-/*# sourceMappingURL=style.min.css.map */
-    </style>
-<style type="text/css">
-    .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
-    </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
-
-
+/*# sourceMappingURL=style.min.css.map */</style>
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
 body {
@@ -11727,44 +13031,62 @@ div#notebook {
   overflow: visible;
   border-top: none;
 }@media print {
+  body {
+    margin: 0;
+  }
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
 
-<!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="custom.css">
 
-<!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
+    init_mathjax = function() {
+        if (window.MathJax) {
+        // MathJax loaded
+            MathJax.Hub.Config({
+                TeX: {
+                    equationNumbers: {
+                    autoNumber: "AMS",
+                    useLabelIds: true
+                    }
+                },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                CommonHTML: {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                },
+                "HTML-CSS": {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                }
+            });
+        
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
-    });
+    }
+    init_mathjax();
     </script>
     <!-- End of mathjax configuration --></head>
 <body>
@@ -11796,8 +13118,7 @@ show=false;
 
 </form>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Testing-with-pytest---part-2">Testing with <a href="https://docs.pytest.org/en/latest/">pytest</a> - part 2<a class="anchor-link" href="#Testing-with-pytest---part-2">&#182;</a></h1>
 </div>
@@ -11814,12 +13135,14 @@ show=false;
 <span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install pytest
 <span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install ipytest
 
-<span class="kn">import</span> <span class="nn">ipytest.magics</span>
 <span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span> <span class="nn">ipytest</span>
+<span class="n">ipytest</span><span class="o">.</span><span class="n">autoconfig</span><span class="p">()</span>
+
 <span class="vm">__file__</span> <span class="o">=</span> <span class="s1">&#39;testing2.ipynb&#39;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11829,18 +13152,44 @@ show=false;
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Requirement already satisfied: pytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (3.5.0)
-Requirement already satisfied: setuptools in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (39.0.1)
-Requirement already satisfied: attrs&gt;=17.4.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (17.4.0)
-Requirement already satisfied: more-itertools&gt;=4.0.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (4.1.0)
-Requirement already satisfied: pluggy&lt;0.7,&gt;=0.5 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (0.6.0)
-Requirement already satisfied: py&gt;=1.5.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.5.3)
-Requirement already satisfied: six&gt;=1.10.0 in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (from pytest) (1.11.0)
-Requirement already satisfied: ipytest in /Users/jerry/.virtualenvs/learn-python3/lib/python3.5/site-packages (0.2.2)
+<pre>Requirement already satisfied: pytest in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (6.1.2)
+Requirement already satisfied: py&gt;=1.8.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pytest) (1.9.0)
+Requirement already satisfied: pluggy&lt;1.0,&gt;=0.12 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pytest) (0.13.1)
+Requirement already satisfied: attrs&gt;=17.4.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pytest) (20.2.0)
+Requirement already satisfied: toml in /Users/iain/Library/Python/3.9/lib/python/site-packages (from pytest) (0.10.1)
+Requirement already satisfied: iniconfig in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pytest) (1.1.1)
+Requirement already satisfied: packaging in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pytest) (20.4)
+Requirement already satisfied: pyparsing&gt;=2.0.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from packaging-&gt;pytest) (2.4.7)
+Requirement already satisfied: six in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from packaging-&gt;pytest) (1.15.0)
+Requirement already satisfied: ipytest in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (0.9.1)
+Requirement already satisfied: pytest&gt;=5.4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipytest) (6.1.2)
+Requirement already satisfied: ipython in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipytest) (7.19.0)
+Requirement already satisfied: packaging in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipytest) (20.4)
+Requirement already satisfied: py&gt;=1.8.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pytest&gt;=5.4-&gt;ipytest) (1.9.0)
+Requirement already satisfied: iniconfig in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pytest&gt;=5.4-&gt;ipytest) (1.1.1)
+Requirement already satisfied: toml in /Users/iain/Library/Python/3.9/lib/python/site-packages (from pytest&gt;=5.4-&gt;ipytest) (0.10.1)
+Requirement already satisfied: pluggy&lt;1.0,&gt;=0.12 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pytest&gt;=5.4-&gt;ipytest) (0.13.1)
+Requirement already satisfied: attrs&gt;=17.4.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pytest&gt;=5.4-&gt;ipytest) (20.2.0)
+Requirement already satisfied: pickleshare in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipython-&gt;ipytest) (0.7.5)
+Requirement already satisfied: pexpect&gt;4.3; sys_platform != &#34;win32&#34; in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipython-&gt;ipytest) (4.8.0)
+Requirement already satisfied: traitlets&gt;=4.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipython-&gt;ipytest) (5.0.5)
+Requirement already satisfied: jedi&gt;=0.10 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipython-&gt;ipytest) (0.17.2)
+Requirement already satisfied: pygments in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipython-&gt;ipytest) (2.7.2)
+Requirement already satisfied: backcall in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipython-&gt;ipytest) (0.2.0)
+Requirement already satisfied: setuptools&gt;=18.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipython-&gt;ipytest) (49.2.1)
+Requirement already satisfied: appnope; sys_platform == &#34;darwin&#34; in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipython-&gt;ipytest) (0.1.0)
+Requirement already satisfied: decorator in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipython-&gt;ipytest) (4.4.2)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from ipython-&gt;ipytest) (3.0.8)
+Requirement already satisfied: pyparsing&gt;=2.0.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from packaging-&gt;ipytest) (2.4.7)
+Requirement already satisfied: six in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from packaging-&gt;ipytest) (1.15.0)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pexpect&gt;4.3; sys_platform != &#34;win32&#34;-&gt;ipython-&gt;ipytest) (0.6.0)
+Requirement already satisfied: ipython-genutils in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from traitlets&gt;=4.2-&gt;ipython-&gt;ipytest) (0.2.0)
+Requirement already satisfied: parso&lt;0.8.0,&gt;=0.7.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jedi&gt;=0.10-&gt;ipython-&gt;ipytest) (0.7.1)
+Requirement already satisfied: wcwidth in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;ipytest) (0.2.5)
 </pre>
 </div>
 </div>
@@ -11850,8 +13199,7 @@ Requirement already satisfied: ipytest in /Users/jerry/.virtualenvs/learn-python
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="@pytest.fixture"><a href="https://docs.pytest.org/en/latest/fixture.html#pytest-fixtures-explicit-modular-scalable"><code>@pytest.fixture</code></a><a class="anchor-link" href="#@pytest.fixture">&#182;</a></h2><p>Let's consider we have an implemention of <code>Person</code> class which we want to test.</p>
 
@@ -11865,7 +13213,7 @@ Requirement already satisfied: ipytest in /Users/jerry/.virtualenvs/learn-python
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This would be e.g. in person.py</span>
 <span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="n">first_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span> <span class="o">=</span> <span class="n">last_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
@@ -11884,14 +13232,13 @@ Requirement already satisfied: ipytest in /Users/jerry/.virtualenvs/learn-python
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+=</span> <span class="n">years</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can easily create resusable testing code by using pytest fixtures. If you introduce your fixtures inside <a href="https://docs.pytest.org/en/latest/fixture.html#conftest-py-sharing-fixture-functions"><em>conftest.py</em></a>, the fixtures are available for all your test cases. In general, the location of <em>conftest.py</em> is at the root of your <em>tests</em> directory.</p>
 
@@ -11910,14 +13257,13 @@ Requirement already satisfied: ipytest in /Users/jerry/.virtualenvs/learn-python
     <span class="k">return</span> <span class="n">person</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Then you can utilize <code>default_person</code> fixture in the actual test cases.</p>
 
@@ -11956,7 +13302,7 @@ def test_increase_age_with_negative_number(default_person):
         default_person.increase_age(-1)
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11966,19 +13312,12 @@ def test_increase_age_with_negative_number(default_person):
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>================================================================================================= test session starts =================================================================================================
-platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
-rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
-plugins: nbval-0.9.0
-collected 4 items
-
-testing2.py ....                                                                                                                                                                                                [100%]
-
-============================================================================================== 4 passed in 0.02 seconds ===============================================================================================
+<pre>....                                                                                                             [100%]
+4 passed in 0.02s
 </pre>
 </div>
 </div>
@@ -11988,8 +13327,7 @@ testing2.py ....                                                                
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By using a fixture, we could use the same <code>default_person</code> for all our four test cases!</p>
 <p>In the <code>test_increase_age_with_negative_number</code> we used <a href="https://docs.pytest.org/en/latest/assert.html#assertions-about-expected-exceptions"><code>pytest.raises</code></a> to verify that an exception is raised.</p>
@@ -11998,8 +13336,7 @@ testing2.py ....                                                                
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="@pytest.mark.parametrize"><a href="https://docs.pytest.org/en/latest/parametrize.html#pytest-mark-parametrize-parametrizing-test-functions"><code>@pytest.mark.parametrize</code></a><a class="anchor-link" href="#@pytest.mark.parametrize">&#182;</a></h2><p>Sometimes you want to test the same functionality with multiple different inputs. <code>pytest.mark.parametrize</code> is your solution for defining multiple different inputs with expected outputs. Let's consider the following implementation of <code>replace_names</code> function.</p>
 
@@ -12019,14 +13356,13 @@ testing2.py ....                                                                
     <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">manipulated_words</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can test the <code>replace_names</code> function with multiple inputs by using <code>pytest.mark.parametrize</code>.</p>
 
@@ -12051,7 +13387,7 @@ def test_replace_names(original, new_name, expected):
     assert result == expected
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12061,24 +13397,12 @@ def test_replace_names(original, new_name, expected):
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>================================================================================================= test session starts =================================================================================================
-platform darwin -- Python 3.5.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
-rootdir: /Users/jerry/github/jerry-git/learn-python3, inifile: pytest.ini
-plugins: nbval-0.9.0
-collected 3 items
-
-testing2.py ...                                                                                                                                                                                                 [100%]
-
-================================================================================================== warnings summary ===================================================================================================
-None
-  Module already imported so cannot be rewritten: nbval
-
--- Docs: http://doc.pytest.org/en/latest/warnings.html
-======================================================================================== 3 passed, 1 warnings in 0.03 seconds =========================================================================================
+<pre>...                                                                                                              [100%]
+3 passed in 0.02s
 </pre>
 </div>
 </div>
@@ -12087,9 +13411,25 @@ None
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
+
+
+
 
  
 

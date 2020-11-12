@@ -85,7 +85,7 @@ def post_save(model, os_path, contents_manager):
 
         out_dir_html = os.path.join(os.path.dirname(dir_), 'html')
         os.makedirs(out_dir_html, exist_ok=True)
-        cmd = 'jupyter nbconvert --to html --output-dir {} --output {}.html {}'.format(
+        cmd = 'jupyter nbconvert --to html --template classic --output-dir {} --output {}.html {}'.format(
             out_dir_html, out_file_base, source)
         _run_cmd(cmd, cwd=dir_)
 

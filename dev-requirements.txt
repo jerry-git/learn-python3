@@ -1,0 +1,5 @@
+black[jupyter]
+jupyter
+nbval
+pre-commit
+pytest

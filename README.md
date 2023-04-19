@@ -27,25 +27,25 @@ See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRI
 
 
 ## Beginner
-1. [Strings](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/strings.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/strings.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/strings_exercise.ipynb)
-1. [Numbers](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/numbers.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/numbers.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/numbers_exercise.ipynb)
-1. [Conditionals](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/conditionals.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/conditionals.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/conditionals_exercise.ipynb)
-1. [Lists](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/lists.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/lists.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/lists_exercise.ipynb)
-1. [Dictionaries](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/dictionaries.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/dictionaries.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/dictionaries_exercise.ipynb)
-1. [For loops](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/for_loops.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/for_loops.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/for_loops_exercise.ipynb)
-1. [Functions](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/functions.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/functions.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/functions_exercise.ipynb)
-1. [Testing with pytest - part 1](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/testing1.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/testing1.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/testing1_exercise.ipynb)
-1. Recap exercise 1 [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/recap1_exercise.ipynb)
-1. [File I\O](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/file_io.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/file_io.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/file_io_exercise.ipynb)
-1. [Classes](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/classes.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/classes.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/classes_exercise.ipynb)
-1. [Exceptions](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/exceptions.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/exceptions.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/exceptions_exercise.ipynb)
-1. [Modules and packages](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/modules_and_packages.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/modules_and_packages.ipynb)
-1. [Debugging](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/debugging.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/debugging.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/debugging_exercise.ipynb)
-1. [Goodies of the Standard Library - part 1](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/std_lib.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/std_lib.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/std_lib1_exercise.ipynb)
-1. [Testing with pytest - part 2](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/testing2.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/testing2.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/testing2_exercise.ipynb)
-1. [Virtual environment](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/venv.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/venv.ipynb)
-1. [Project structure](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/project_structure.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/project_structure.ipynb)
-1. Recap exercise 2 [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/recap2_exercise.ipynb)
+1. [Strings](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/01_strings.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/01_strings.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/01_strings_exercise.ipynb)
+2. [Numbers](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/02_numbers.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/02_numbers.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/02_numbers_exercise.ipynb)
+3. [Conditionals](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/03_conditionals.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/03_conditionals.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/03_conditionals_exercise.ipynb)
+4. [Lists](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/04_lists.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/04_lists.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/04_lists_exercise.ipynb)
+5. [Dictionaries](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/05_dictionaries.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/05_dictionaries.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/05_dictionaries_exercise.ipynb)
+6. [For loops](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/06_for_loops.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/06_for_loops.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/06_for_loops_exercise.ipynb)
+7. [Functions](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/07_functions.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/07_functions.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/07_functions_exercise.ipynb)
+8. [Testing with pytest - part 1](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/08_testing1.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/08_testing1.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/08_testing1_exercise.ipynb)
+9. Recap exercise 1 [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/09_recap1_exercise.ipynb)
+10. [File I\O](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/10_file_io.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/10_file_io.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/10_file_io_exercise.ipynb)
+11. [Classes](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/11_classes.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/11_classes.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/11_classes_exercise.ipynb)
+12. [Exceptions](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/12_exceptions.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/12_exceptions.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/12_exceptions_exercise.ipynb)
+13. [Modules and packages](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/13_modules_and_packages.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/13_modules_and_packages.ipynb)
+14. [Debugging](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/14_debugging.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/14_debugging.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/14_debugging_exercise.ipynb)
+15. [Goodies of the Standard Library - part 1](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/15_std_lib.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/15_std_lib.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/15_std_lib1_exercise.ipynb)
+16. [Testing with pytest - part 2](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/16_testing2.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/16_testing2.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/16_testing2_exercise.ipynb)
+17. [Virtual environment](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/17_venv.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/17_venv.ipynb)
+18. [Project structure](https://jerry-git.github.io/learn-python3/notebooks/beginner/html/18_project_structure.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/notebooks/18_project_structure.ipynb)
+19. Recap exercise 2 [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/beginner/exercises/19_recap2_exercise.ipynb)
 
 
 ## Intermediate
@@ -61,7 +61,6 @@ Python is a powerful language which contains many features not presented in most
 
 #### Step up your `pytest` game
 1. [Efficient use of fixtures](https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/pytest_fixtures.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/notebooks/pytest_fixtures.ipynb)
-1. Other tips and tricks
 
 #### Best practices
 A list of best development practices for Python projects. Most of the practices listed here are also applicable for other languages, however the presented tooling focuses mainly on Python.
@@ -69,38 +68,6 @@ A list of best development practices for Python projects. Most of the practices 
 
 #### General topics
 1. [Goodies of the Standard Library - part 2](https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/std_lib2.html) [[notebook]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/notebooks/std_lib2.ipynb) [[exercise]](http://nbviewer.jupyter.org/github/jerry-git/learn-python3/blob/master/notebooks/intermediate/exercises/std_lib2_exercise.ipynb)
-
-#### Backlog
-* Sets
-* Generators
-* Decorators
-* Context managers
-* Playing with attributes
-* *, *args, **kwargs
-* Command line arguments with click
-* OOP - inheritance
-* OOP - Abstract Base Classes
-* OOP - attrs
-* Testing with mocks
-* Structuring your tests
-
-
-## Use cases
-
-#### Playing with the web
-* requests
-* testing requests with responses
-* beautifulsoup4
-* selenium
-
-#### Communicating with databases
-* SQLAlchemy
-
-#### Working with documents
-* excel
-	* openpyxl
-* pdf
-	* pdfrw / PyPDF2
 
 
 ## Credits

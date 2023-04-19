@@ -5,3 +5,4 @@
 .tox*
 *pycache*
 sync-*.sh
+tmp.txt

@@ -4,15 +4,13 @@
 
 # Learn Python 3
 
-[![Build Status](https://travis-ci.org/jerry-git/learn-python3.svg?branch=master)](https://travis-ci.org/jerry-git/learn-python3)
-
 ## Introduction
 
-This repository contains a collection of materials for teaching/learning Python 3 (3.5+).
+This repository contains a collection of materials for teaching/learning Python 3 (3.10+).
 
 #### Requirements
-* Have Python 3.5 or newer installed. You can check the version by typing `python3 --version` in your command line. You can download the latest Python version from [here](https://www.python.org/downloads/).
-* Have [Jupyter Notebook installed](http://jupyter.readthedocs.io/en/latest/install.html).
+* Have Python 3.10 or newer installed. You can check the version by typing `python3 --version` in your command line. You can download the latest Python version from [here](https://www.python.org/downloads/).
+* Have [Jupyter Notebook installed](http://jupyter.readthedocs.io/en/latest/install.html). `pip install jupyter` is sufficient in most cases.
 
 If you can not access Python and/or Jupyter Notebook on your machine, you can still follow the web based materials. However, you should be able to use Jupyter Notebook in order to complete the exercises.
 

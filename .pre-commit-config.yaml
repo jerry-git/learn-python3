@@ -11,3 +11,8 @@ repos:
         entry: black
         language: system
         files: \.(py|ipynb)$
+      - id: pyupgrade
+        name: pyupgrade
+        entry: nbqa pyupgrade --py310-plus
+        language: system
+        files: \.(py|ipynb)$

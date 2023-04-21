@@ -1,5 +1,6 @@
 black[jupyter]
 jupyter
+nbqa[toolchain]
 nbval
 pre-commit
 pytest

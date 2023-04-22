@@ -15137,25 +15137,18 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
 
 <span class="n">local_now</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;local now: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">local_now</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;local now: </span><span class="si">{</span><span class="n">local_now</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">utc_now</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;utc now: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">utc_now</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;utc now: </span><span class="si">{</span><span class="n">utc_now</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># You can access any value separately:</span>
 <span class="nb">print</span><span class="p">(</span>
-    <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-        <span class="n">local_now</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
-        <span class="n">local_now</span><span class="o">.</span><span class="n">month</span><span class="p">,</span>
-        <span class="n">local_now</span><span class="o">.</span><span class="n">day</span><span class="p">,</span>
-        <span class="n">local_now</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span>
-        <span class="n">local_now</span><span class="o">.</span><span class="n">minute</span><span class="p">,</span>
-        <span class="n">local_now</span><span class="o">.</span><span class="n">second</span><span class="p">,</span>
-    <span class="p">)</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">local_now</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">local_now</span><span class="o">.</span><span class="n">month</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">local_now</span><span class="o">.</span><span class="n">day</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">local_now</span><span class="o">.</span><span class="n">hour</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">local_now</span><span class="o">.</span><span class="n">minute</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">local_now</span><span class="o">.</span><span class="n">second</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;date: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">local_now</span><span class="o">.</span><span class="n">date</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;time: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">local_now</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;date: </span><span class="si">{</span><span class="n">local_now</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;time: </span><span class="si">{</span><span class="n">local_now</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15175,11 +15168,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>local now: 2023-04-19 10:15:30.717348
-utc now: 2023-04-19 07:15:30.717561
-2023 4 19 10 15 30
-date: 2023-04-19
-time: 10:15:30.717348
+<pre>local now: 2023-04-22 14:56:40.502649
+utc now: 2023-04-22 11:56:40.502813
+2023 4 22 14 56 40
+date: 2023-04-22
+time: 14:56:40.502649
 </pre>
 </div>
 </div>
@@ -15232,8 +15225,8 @@ time: 10:15:30.717348
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2023/04/19-10:15:30
-date: 2023-04-19 time:10:15:30
+<pre>2023/04/22-14:56:40
+date: 2023-04-22 time:14:56:40
 </pre>
 </div>
 </div>
@@ -15263,7 +15256,7 @@ date: 2023-04-19 time:10:15:30
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dt</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">&quot;2000-01-01 10:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_dt: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_dt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;my_dt: </span><span class="si">{</span><span class="n">my_dt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15313,12 +15306,12 @@ date: 2023-04-19 time:10:15:30
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tomorrow</span> <span class="o">=</span> <span class="n">local_now</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tomorrow this time: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tomorrow</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tomorrow this time: </span><span class="si">{</span><span class="n">tomorrow</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">delta</span> <span class="o">=</span> <span class="n">tomorrow</span> <span class="o">-</span> <span class="n">local_now</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tomorrow - now = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days: </span><span class="si">{}</span><span class="s2">, seconds: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">delta</span><span class="o">.</span><span class="n">days</span><span class="p">,</span> <span class="n">delta</span><span class="o">.</span><span class="n">seconds</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;total seconds: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">delta</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tomorrow - now = </span><span class="si">{</span><span class="n">delta</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;days: </span><span class="si">{</span><span class="n">delta</span><span class="o">.</span><span class="n">days</span><span class="si">}</span><span class="s2">, seconds: </span><span class="si">{</span><span class="n">delta</span><span class="o">.</span><span class="n">seconds</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;total seconds: </span><span class="si">{</span><span class="n">delta</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15338,7 +15331,7 @@ date: 2023-04-19 time:10:15:30
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>tomorrow this time: 2023-04-20 10:15:30.717348
+<pre>tomorrow this time: 2023-04-23 14:56:40.502649
 tomorrow - now = 1 day, 0:00:00
 days: 1, seconds: 0
 total seconds: 86400.0
@@ -15357,8 +15350,7 @@ total seconds: 86400.0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Working-with-timezones">Working with timezones<a class="anchor-link" href="#Working-with-timezones">&#182;</a></h3><p>Let's first make sure <a href="http://pytz.sourceforge.net/"><code>pytz</code></a> is installed.</p>
-
+<h3 id="Working-with-timezones">Working with timezones<a class="anchor-link" href="#Working-with-timezones">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15370,67 +15362,25 @@ total seconds: 86400.0
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="o">!{</span>sys.executable<span class="o">}</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pytz
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Requirement already satisfied: pytz in /Users/jerrypussinen/.virtualenvs/learn-python/lib/python3.10/site-packages (2023.3)
-
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip available: <span class="ansi-red-fg">22.3.1</span> -&gt; <span class="ansi-green-fg">23.0.1</span>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip install --upgrade pip</span>
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="kn">import</span> <span class="nn">pytz</span>
+<span class="kn">from</span> <span class="nn">zoneinfo</span> <span class="kn">import</span> <span class="n">ZoneInfo</span>
 
 <span class="n">naive_utc_now</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;naive utc now: </span><span class="si">{}</span><span class="s2">, tzinfo: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">naive_utc_now</span><span class="p">,</span> <span class="n">naive_utc_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;naive utc now: </span><span class="si">{</span><span class="n">naive_utc_now</span><span class="si">}</span><span class="s2">, tzinfo: </span><span class="si">{</span><span class="n">naive_utc_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Localizing naive datetimes</span>
-<span class="n">UTC_TZ</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;UTC&quot;</span><span class="p">)</span>
-<span class="n">utc_now</span> <span class="o">=</span> <span class="n">UTC_TZ</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">naive_utc_now</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;utc now: </span><span class="si">{}</span><span class="s2">, tzinfo: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">utc_now</span><span class="p">,</span> <span class="n">utc_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">))</span>
+<span class="n">UTC_TZ</span> <span class="o">=</span> <span class="n">ZoneInfo</span><span class="p">(</span><span class="s2">&quot;UTC&quot;</span><span class="p">)</span>
+<span class="n">utc_now</span> <span class="o">=</span> <span class="n">naive_utc_now</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">UTC_TZ</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;utc now: </span><span class="si">{</span><span class="n">utc_now</span><span class="si">}</span><span class="s2">, tzinfo: </span><span class="si">{</span><span class="n">utc_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Converting localized datetimes to different timezone</span>
-<span class="n">PARIS_TZ</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Europe/Paris&quot;</span><span class="p">)</span>
-<span class="n">paris_now</span> <span class="o">=</span> <span class="n">PARIS_TZ</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">utc_now</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Paris: </span><span class="si">{}</span><span class="s2">, tzinfo: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">paris_now</span><span class="p">,</span> <span class="n">paris_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">))</span>
+<span class="n">PARIS_TZ</span> <span class="o">=</span> <span class="n">ZoneInfo</span><span class="p">(</span><span class="s2">&quot;Europe/Paris&quot;</span><span class="p">)</span>
+<span class="n">paris_now</span> <span class="o">=</span> <span class="n">utc_now</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">PARIS_TZ</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Paris: </span><span class="si">{</span><span class="n">paris_now</span><span class="si">}</span><span class="s2">, tzinfo: </span><span class="si">{</span><span class="n">paris_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="n">NEW_YORK_TZ</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;America/New_York&quot;</span><span class="p">)</span>
-<span class="n">ny_now</span> <span class="o">=</span> <span class="n">NEW_YORK_TZ</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">utc_now</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New York: </span><span class="si">{}</span><span class="s2">, tzinfo: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ny_now</span><span class="p">,</span> <span class="n">ny_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">))</span>
+<span class="n">NEW_YORK_TZ</span> <span class="o">=</span> <span class="n">ZoneInfo</span><span class="p">(</span><span class="s2">&quot;America/New_York&quot;</span><span class="p">)</span>
+<span class="n">ny_now</span> <span class="o">=</span> <span class="n">utc_now</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">NEW_YORK_TZ</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New York: </span><span class="si">{</span><span class="n">ny_now</span><span class="si">}</span><span class="s2">, tzinfo: </span><span class="si">{</span><span class="n">ny_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15450,10 +15400,10 @@ total seconds: 86400.0
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>naive utc now: 2023-04-19 07:15:36.103354, tzinfo: None
-utc now: 2023-04-19 07:15:36.103354+00:00, tzinfo: UTC
-Paris: 2023-04-19 09:15:36.103354+02:00, tzinfo: Europe/Paris
-New York: 2023-04-19 03:15:36.103354-04:00, tzinfo: America/New_York
+<pre>naive utc now: 2023-04-22 11:56:40.575404, tzinfo: None
+utc now: 2023-04-22 11:56:40.575404+00:00, tzinfo: UTC
+Paris: 2023-04-22 13:56:40.575404+02:00, tzinfo: Europe/Paris
+New York: 2023-04-22 07:56:40.575404-04:00, tzinfo: America/New_York
 </pre>
 </div>
 </div>
@@ -15490,7 +15440,7 @@ New York: 2023-04-19 03:15:36.103354-04:00, tzinfo: America/New_York
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -15551,7 +15501,7 @@ This is critical
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -15579,8 +15529,9 @@ This is critical
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>ERROR:root:All went south in my calculation
 Traceback (most recent call last):
-  File &#34;/var/folders/q4/_vnp7m_d625g5prgrz28h_fr0000gn/T/ipykernel_97297/3366486048.py&#34;, line 2, in &lt;module&gt;
+  File &#34;/var/folders/q4/_vnp7m_d625g5prgrz28h_fr0000gn/T/ipykernel_46498/3366486048.py&#34;, line 2, in &lt;module&gt;
     path_calculation = 1 / 0
+                       ~~^~~
 ZeroDivisionError: division by zero
 </pre>
 </div>
@@ -15606,7 +15557,7 @@ ZeroDivisionError: division by zero
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -15642,8 +15593,8 @@ ZeroDivisionError: division by zero
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2023-04-19 10:15:36,628 | MyLogger     | WARNING    | Something bad is going to happen
-2023-04-19 10:15:36,629 | MyLogger     | ERROR      | Uups, it already happened
+<pre>2023-04-22 14:56:40,601 | MyLogger     | WARNING    | Something bad is going to happen
+2023-04-22 14:56:40,602 | MyLogger     | ERROR      | Uups, it already happened
 </pre>
 </div>
 </div>
@@ -15668,11 +15619,11 @@ ZeroDivisionError: division by zero
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="c1"># This is only required for Jupyter notebook environment</span>
 <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">reload</span>
@@ -15682,7 +15633,7 @@ ZeroDivisionError: division by zero
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;MyFileLogger&quot;</span><span class="p">)</span>
 
 <span class="c1"># Let&#39;s define a file_handler for our logger</span>
-<span class="n">log_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;my_log.txt&quot;</span><span class="p">)</span>
+<span class="n">log_path</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;my_log.txt&quot;</span>
 <span class="n">file_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">log_path</span><span class="p">)</span>
 
 <span class="c1"># And a nice format</span>
@@ -15721,16 +15672,16 @@ ZeroDivisionError: division by zero
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="n">rand_int</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;random integer between 1-100: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rand_int</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;random integer between 1-100: </span><span class="si">{</span><span class="n">rand_int</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">rand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;random float between 0-1: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rand</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;random float between 0-1: </span><span class="si">{</span><span class="n">rand</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15750,8 +15701,8 @@ ZeroDivisionError: division by zero
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>random integer between 1-100: 48
-random float between 0-1: 0.47661151441455996
+<pre>random integer between 1-100: 18
+random float between 0-1: 0.5674405898646947
 </pre>
 </div>
 </div>
@@ -15777,7 +15728,7 @@ random float between 0-1: 0.47661151441455996
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -15851,7 +15802,7 @@ random float between 0-1: 0.47661151441455996
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -15861,12 +15812,12 @@ random float between 0-1: 0.47661151441455996
 <span class="n">search_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(g12)&quot;</span>
 
 <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">search_pattern</span><span class="p">,</span> <span class="n">secret_code</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;match: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">match</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;match.group(): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;match: </span><span class="si">{</span><span class="n">match</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;match.group(): </span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">numbers_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;[0-9]&quot;</span>
 <span class="n">numbers_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">numbers_pattern</span><span class="p">,</span> <span class="n">secret_code</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numbers: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">numbers_match</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;numbers: </span><span class="si">{</span><span class="n">numbers_match</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15913,7 +15864,7 @@ numbers: [&#39;8&#39;, &#39;1&#39;, &#39;2&#39;, &#39;5&#39;, &#39;0&#39;, &#39;
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>

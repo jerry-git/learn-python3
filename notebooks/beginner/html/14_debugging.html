@@ -15122,7 +15122,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="import-pdb;-pdb.set_trace()"><code>import pdb; pdb.set_trace()</code><a class="anchor-link" href="#import-pdb;-pdb.set_trace()">&#182;</a></h2><p>The basic use case for debugging is that you want to stop the execution of your program at some certain point and monitor variable values or program execution in general from that specific point onward. You stop the execution at the point you want by setting a breakpoint into code by <code>import pdb; pdb.set_trace()</code> (note in Python versions &gt;= 3.7, there's a shortcut: <code>breakpoint()</code>).</p>
+<h2 id="breakpoint()"><code>breakpoint()</code><a class="anchor-link" href="#breakpoint()">&#182;</a></h2><p>The basic use case for debugging is that you want to stop the execution of your program at some certain point and monitor variable values or program execution in general from that specific point onward. You stop the execution at the point you want by setting a breakpoint into code by <code>breakpoint()</code>.</p>
 <p>When you execute your program, the execution will stop at this point and will enter to interactive debugger session. You can add as many breakpoints into your code as you want.</p>
 
 </div>
@@ -15157,7 +15157,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Let's-see-how-it-works">Let's see how it works<a class="anchor-link" href="#Let's-see-how-it-works">&#182;</a></h2><p>Uncomment the <code>import pdb; pdb.set_trace()</code> lines and execute the cell. Execute the program line by line by using the commands defined above. Try all the above mentioned commands at least once. Pay attention to the difference between <code>n</code> and <code>s</code>.</p>
+<h2 id="Let's-see-how-it-works">Let's see how it works<a class="anchor-link" href="#Let's-see-how-it-works">&#182;</a></h2><p>Uncomment the <code>Pdb().set_trace()</code> (this is the Jupyter notebook equivalent for <code>breakpoint()</code>) lines and execute the cell. Execute the program line by line by using the commands defined above. Try all the above mentioned commands at least once. Pay attention to the difference between <code>n</code> and <code>s</code>.</p>
 
 </div>
 </div>
@@ -15170,7 +15170,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">SuperGreeter</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.debugger</span> <span class="kn">import</span> <span class="n">Pdb</span>
+
+
+<span class="k">class</span> <span class="nc">SuperGreeter</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">people_to_greet</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">people</span> <span class="o">=</span> <span class="n">people_to_greet</span>
 
@@ -15184,21 +15187,21 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 <span class="bp">self</span><span class="o">.</span><span class="n">_greet_polite</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_greet_polite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;G&#39;day </span><span class="si">{}</span><span class="s2">! How are you doing?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;G&#39;day </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">! How are you doing?&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_greet_street_style</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="c1"># import pdb; pdb.set_trace()  # UNCOMMENT</span>
+        <span class="c1"># Pdb().set_trace() # UNCOMMENT</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WASSUP </span><span class="si">{}</span><span class="s2">!?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;WASSUP </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!?&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_greet_hawaii</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aloha </span><span class="si">{}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Aloha </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">people</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;Donald&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span> <span class="s2">&quot;alex&quot;</span><span class="p">]</span>
-    <span class="c1"># import pdb; pdb.set_trace()  # UNCOMMENT</span>
+    <span class="c1"># Pdb().set_trace()  # UNCOMMENT</span>
     <span class="n">greeter</span> <span class="o">=</span> <span class="n">SuperGreeter</span><span class="p">(</span><span class="n">people</span><span class="p">)</span>
     <span class="n">greeter</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
 

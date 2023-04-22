@@ -15127,7 +15127,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
     <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15144,9 +15144,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_instance</span> <span class="o">=</span> <span class="n">MyFirstClass</span><span class="p">(</span><span class="s2">&quot;John Doe&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_instance: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_instance</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_instance</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_instance.name: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_instance</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;my_instance: </span><span class="si">{</span><span class="n">my_instance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">my_instance</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;my_instance.name: </span><span class="si">{</span><span class="n">my_instance</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15166,7 +15166,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>my_instance: &lt;__main__.MyFirstClass object at 0x109f15180&gt;
+<pre>my_instance: &lt;__main__.MyFirstClass object at 0x10e7bc410&gt;
 type: &lt;class &#39;__main__.MyFirstClass&#39;&gt;
 my_instance.name: John Doe
 </pre>
@@ -15311,7 +15311,7 @@ instance created
         <span class="bp">self</span><span class="o">.</span><span class="n">second_var</span> <span class="o">=</span> <span class="n">var2</span>
 
     <span class="k">def</span> <span class="nf">print_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first_var</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">second_var</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first_var</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">second_var</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 <span class="n">e</span> <span class="o">=</span> <span class="n">Example</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
@@ -15370,11 +15370,11 @@ instance created
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Person: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Person: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
 
 
 <span class="n">jack</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="mi">82</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is the string presentation of jack: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jack</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This is the string presentation of jack: </span><span class="si">{</span><span class="n">jack</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15433,9 +15433,7 @@ instance created
         <span class="bp">self</span><span class="o">.</span><span class="n">instance_variable</span> <span class="o">=</span> <span class="n">var1</span>
 
     <span class="k">def</span> <span class="nf">show_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">info</span> <span class="o">=</span> <span class="s2">&quot;instance_variable: </span><span class="si">{}</span><span class="s2">, name: </span><span class="si">{}</span><span class="s2">, description: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">instance_variable</span><span class="p">,</span> <span class="n">Example</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">Example</span><span class="o">.</span><span class="n">description</span>
-        <span class="p">)</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;instance_variable: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">instance_variable</span><span class="si">}</span><span class="s2">, name: </span><span class="si">{</span><span class="n">Example</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, description: </span><span class="si">{</span><span class="n">Example</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
 
 
@@ -15609,7 +15607,7 @@ instance_variable: bar, name: Modified name, description: Just an example of a s
 
     <span class="k">def</span> <span class="nf">celebrate_birthday</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_age</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Happy bday for </span><span class="si">{}</span><span class="s2"> years old!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_age</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Happy bday for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_age</span><span class="si">}</span><span class="s2"> years old!&quot;</span><span class="p">)</span>
 
 
 <span class="n">example_person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
@@ -15696,11 +15694,11 @@ instance_variable: bar, name: Modified name, description: Just an example of a s
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
 <span class="n">dog</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dog&#39;s favorite food is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dog</span><span class="o">.</span><span class="n">favorite_food</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dog&#39;s favorite food is </span><span class="si">{</span><span class="n">dog</span><span class="o">.</span><span class="n">favorite_food</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">cat</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">()</span>
 <span class="n">cat</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cat&#39;s favorite food is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">favorite_food</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cat&#39;s favorite food is </span><span class="si">{</span><span class="n">cat</span><span class="o">.</span><span class="n">favorite_food</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>

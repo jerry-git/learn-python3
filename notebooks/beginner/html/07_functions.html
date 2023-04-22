@@ -15126,7 +15126,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_first_function</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">my_first_function</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">my_first_function</span><span class="p">()</span>  <span class="c1"># Calling a function</span>
 </pre></div>
@@ -15148,7 +15148,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>type: &lt;function my_first_function at 0x10b0c9000&gt;
+<pre>type: &lt;class &#39;function&#39;&gt;
 Hello world!
 </pre>
 </div>
@@ -15178,7 +15178,7 @@ Hello world!
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">greet_us</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2"> and </span><span class="si">{}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
 
 
 <span class="n">greet_us</span><span class="p">(</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;Superman&quot;</span><span class="p">)</span>
@@ -15226,7 +15226,7 @@ Hello world!
 
 <span class="n">uggly_string</span> <span class="o">=</span> <span class="s2">&quot;  MixED CaSe &quot;</span>
 <span class="n">pretty</span> <span class="o">=</span> <span class="n">strip_and_lowercase</span><span class="p">(</span><span class="n">uggly_string</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pretty: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pretty</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pretty: </span><span class="si">{</span><span class="n">pretty</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15530,7 +15530,7 @@ Hello world!
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_sum</span><span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Function which prints the sum of given arguments.&quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sum: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val1</span> <span class="o">+</span> <span class="n">val2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sum: </span><span class="si">{</span><span class="n">val1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">val2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">help</span><span class="p">(</span><span class="n">print_sum</span><span class="p">))</span>

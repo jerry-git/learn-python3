@@ -15124,7 +15124,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_empty_dict</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># alternative: my_empty_dict = dict()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dict: </span><span class="si">{}</span><span class="s2">, type: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_empty_dict</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">my_empty_dict</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dict: </span><span class="si">{</span><span class="n">my_empty_dict</span><span class="si">}</span><span class="s2">, type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">my_empty_dict</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15178,8 +15178,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dict2</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equal: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dict1</span> <span class="o">==</span> <span class="n">dict2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;length: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dict1</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;equals: </span><span class="si">{</span><span class="n">dict1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">dict2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;length: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15201,7 +15201,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>{&#39;value1&#39;: 1.6, &#39;value2&#39;: 10, &#39;name&#39;: &#39;John Doe&#39;}
 {&#39;value1&#39;: 1.6, &#39;value2&#39;: 10, &#39;name&#39;: &#39;John Doe&#39;}
-equal: True
+equals: True
 length: 3
 </pre>
 </div>
@@ -15230,9 +15230,9 @@ length: 3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;keys: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;values: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;items: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;keys: </span><span class="si">{</span><span class="n">dict1</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;values: </span><span class="si">{</span><span class="n">dict1</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;items: </span><span class="si">{</span><span class="n">dict1</span><span class="o">.</span><span class="n">items</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15287,7 +15287,7 @@ items: dict_items([(&#39;value1&#39;, 1.6), (&#39;value2&#39;, 10), (&#39;name&#
 <span class="n">my_dict</span><span class="p">[</span><span class="s2">&quot;key2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
 <span class="n">my_dict</span><span class="p">[</span><span class="s2">&quot;key1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;new value&quot;</span>  <span class="c1"># overriding existing value</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value of key1: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s2">&quot;key1&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;value of key1: </span><span class="si">{</span><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15373,7 +15373,7 @@ value of key1: new value
 <span class="k">if</span> <span class="n">key_to_delete</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">:</span>
     <span class="k">del</span> <span class="n">my_dict</span><span class="p">[</span><span class="n">key_to_delete</span><span class="p">]</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{key}</span><span class="s2"> is not in </span><span class="si">{dictionary}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key_to_delete</span><span class="p">,</span> <span class="n">dictionary</span><span class="o">=</span><span class="n">my_dict</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key_to_delete</span><span class="si">}</span><span class="s2"> is not in </span><span class="si">{</span><span class="n">my_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15426,8 +15426,8 @@ my_key is not in {&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: 99}
 <span class="n">my_other_dict</span> <span class="o">=</span> <span class="n">my_dict</span>
 <span class="n">my_other_dict</span><span class="p">[</span><span class="s2">&quot;carrot&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;super tasty&quot;</span>
 <span class="n">my_other_dict</span><span class="p">[</span><span class="s2">&quot;sausage&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;best ever&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_dict: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">other: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_dict</span><span class="p">,</span> <span class="n">my_other_dict</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equal: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_dict</span> <span class="o">==</span> <span class="n">my_other_dict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_dict</span><span class="si">=}</span><span class="se">\n</span><span class="s2">other: </span><span class="si">{</span><span class="n">my_other_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;equals: </span><span class="si">{</span><span class="n">my_dict</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">my_other_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15447,9 +15447,9 @@ my_key is not in {&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: 99}
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>my_dict: {&#39;ham&#39;: &#39;good&#39;, &#39;carrot&#39;: &#39;super tasty&#39;, &#39;sausage&#39;: &#39;best ever&#39;}
+<pre>my_dict={&#39;ham&#39;: &#39;good&#39;, &#39;carrot&#39;: &#39;super tasty&#39;, &#39;sausage&#39;: &#39;best ever&#39;}
 other: {&#39;ham&#39;: &#39;good&#39;, &#39;carrot&#39;: &#39;super tasty&#39;, &#39;sausage&#39;: &#39;best ever&#39;}
-equal: True
+equals: True
 </pre>
 </div>
 </div>
@@ -15481,8 +15481,8 @@ equal: True
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ham&quot;</span><span class="p">:</span> <span class="s2">&quot;good&quot;</span><span class="p">,</span> <span class="s2">&quot;carrot&quot;</span><span class="p">:</span> <span class="s2">&quot;semi good&quot;</span><span class="p">}</span>
 <span class="n">my_other_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
 <span class="n">my_other_dict</span><span class="p">[</span><span class="s2">&quot;beer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;decent&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_dict: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">other: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_dict</span><span class="p">,</span> <span class="n">my_other_dict</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equal: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_dict</span> <span class="o">==</span> <span class="n">my_other_dict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_dict</span><span class="si">=}</span><span class="se">\n</span><span class="s2">other: </span><span class="si">{</span><span class="n">my_other_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;equals: </span><span class="si">{</span><span class="n">my_dict</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">my_other_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15502,9 +15502,9 @@ equal: True
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>my_dict: {&#39;ham&#39;: &#39;good&#39;, &#39;carrot&#39;: &#39;semi good&#39;}
+<pre>my_dict={&#39;ham&#39;: &#39;good&#39;, &#39;carrot&#39;: &#39;semi good&#39;}
 other: {&#39;ham&#39;: &#39;good&#39;, &#39;carrot&#39;: &#39;semi good&#39;, &#39;beer&#39;: &#39;decent&#39;}
-equal: False
+equals: False
 </pre>
 </div>
 </div>
@@ -15535,11 +15535,11 @@ equal: False
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="n">value_of_d</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d: </span><span class="si">{</span><span class="n">value_of_d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="n">d</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;my default value&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="n">value_of_d</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;my default value&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d: </span><span class="si">{</span><span class="n">value_of_d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15589,15 +15589,15 @@ d: my default value
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">food</span><span class="o">=</span><span class="s2">&quot;ham&quot;</span><span class="p">,</span> <span class="n">drink</span><span class="o">=</span><span class="s2">&quot;beer&quot;</span><span class="p">,</span> <span class="n">sport</span><span class="o">=</span><span class="s2">&quot;football&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dict before pops: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_dict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dict before pops: </span><span class="si">{</span><span class="n">my_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">food</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;food&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;food: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">food</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dict after popping food: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_dict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;food: </span><span class="si">{</span><span class="n">food</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dict after popping food: </span><span class="si">{</span><span class="n">my_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">food_again</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;food&quot;</span><span class="p">,</span> <span class="s2">&quot;default value for food&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;food again: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">food_again</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dict after popping food again: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_dict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;food again: </span><span class="si">{</span><span class="n">food_again</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dict after popping food again: </span><span class="si">{</span><span class="n">my_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15653,7 +15653,7 @@ dict after popping food again: {&#39;drink&#39;: &#39;beer&#39;, &#39;sport&#39;
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;my default value&quot;</span><span class="p">)</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;my default value&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">d: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">my_dict: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">my_dict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="se">\n</span><span class="s2">d: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="se">\n</span><span class="s2">my_dict: </span><span class="si">{</span><span class="n">my_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>

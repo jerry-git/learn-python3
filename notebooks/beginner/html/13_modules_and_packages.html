@@ -15170,13 +15170,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </code></pre>
 <p>Let's consider that banana.py file contains:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_available_brands</span><span class="p">():</span>
-    <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;chiquita&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;chiquita&quot;</span><span class="p">]</span>
 
 
 <span class="k">class</span> <span class="nc">Banana</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="o">=</span><span class="s1">&#39;chiquita&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="o">=</span><span class="s2">&quot;chiquita&quot;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">brand</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">get_available_brands</span><span class="p">():</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unkown brand: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">brand</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown brand: </span><span class="si">{</span><span class="n">brand</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_brand</span> <span class="o">=</span> <span class="n">brand</span>
 </pre></div>
 

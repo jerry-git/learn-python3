@@ -15776,7 +15776,7 @@ This should be true
         <span class="n">all_values_truthy</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">break</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;any truthy: </span><span class="si">{}</span><span class="s2">, all truthy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">any_value_truthy</span><span class="p">,</span> <span class="n">all_values_truthy</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;any truthy: </span><span class="si">{</span><span class="n">any_value_truthy</span><span class="si">}</span><span class="s2">, all truthy: </span><span class="si">{</span><span class="n">all_values_truthy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15826,7 +15826,7 @@ This should be true
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">any_value_truthy</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">example_collection</span><span class="p">)</span>
 <span class="n">all_values_truthy</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">example_collection</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;any truthy: </span><span class="si">{}</span><span class="s2">, all truthy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">any_value_truthy</span><span class="p">,</span> <span class="n">all_values_truthy</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;any truthy: </span><span class="si">{</span><span class="n">any_value_truthy</span><span class="si">}</span><span class="s2">, all truthy: </span><span class="si">{</span><span class="n">all_values_truthy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15994,11 +15994,7 @@ This should be true
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_person_details</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">is_gangster</span><span class="p">,</span> <span class="n">is_hacker</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span>
-        <span class="s2">&quot;name: </span><span class="si">{}</span><span class="s2">, gangster: </span><span class="si">{}</span><span class="s2">, hacker: </span><span class="si">{}</span><span class="s2">, age: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">name</span><span class="p">,</span> <span class="n">is_gangster</span><span class="p">,</span> <span class="n">is_hacker</span><span class="p">,</span> <span class="n">age</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, gangster: </span><span class="si">{</span><span class="n">is_gangster</span><span class="si">}</span><span class="s2">, hacker: </span><span class="si">{</span><span class="n">is_hacker</span><span class="si">}</span><span class="s2">, age: </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>

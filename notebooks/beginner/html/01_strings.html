@@ -15481,7 +15481,7 @@ replace(self, old, new, count=-1, /)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="str.format()"><code>str.format()</code><a class="anchor-link" href="#str.format()">&#182;</a></h2>
+<h2 id="f-strings">f-strings<a class="anchor-link" href="#f-strings">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15493,51 +15493,11 @@ replace(self, old, new, count=-1, /)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">secret</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is cool&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">secret</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Python is cool
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">, you can call me </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">))</span>
-<span class="c1"># is the same as:</span>
-<span class="nb">print</span><span class="p">(</span>
-    <span class="s2">&quot;My name is </span><span class="si">{first}</span><span class="s2"> </span><span class="si">{family}</span><span class="s2">, you can call me </span><span class="si">{first}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-        <span class="n">first</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;Doe&quot;</span>
-    <span class="p">)</span>
-<span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s2">&quot;Doe&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">88</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My name is </span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">, you can call me </span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I&#39;m </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15558,7 +15518,44 @@ replace(self, old, new, count=-1, /)
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>My name is John Doe, you can call me John.
-My name is John Doe, you can call me John.
+I&#39;m 88 years old.
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Use &#39;=&#39; to also print the variable name like this: </span><span class="si">{</span><span class="n">age</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Use &#39;=&#39; to also print the variable name like this: age=88
 </pre>
 </div>
 </div>
@@ -15605,7 +15602,7 @@ My name is John Doe, you can call me John.
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Some cool python libraries: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cool_python_libs</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Some cool python libraries: </span><span class="si">{</span><span class="n">cool_python_libs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15641,7 +15638,7 @@ My name is John Doe, you can call me John.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Alternatives (not as <a href="http://docs.python-guide.org/en/latest/writing/style/#idioms">Pythonic</a> and <a href="https://waymoot.org/home/python_string/">slower</a>):</p>
+<p>Alternative (not as <a href="http://docs.python-guide.org/en/latest/writing/style/#idioms">Pythonic</a> and <a href="https://waymoot.org/home/python_string/">slower</a>):</p>
 
 </div>
 </div>
@@ -15655,12 +15652,12 @@ My name is John Doe, you can call me John.
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cool_python_libs</span> <span class="o">=</span> <span class="n">pandas</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">numpy</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">requests</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Some cool python libraries: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cool_python_libs</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Some cool python libraries: </span><span class="si">{</span><span class="n">cool_python_libs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">cool_python_libs</span> <span class="o">=</span> <span class="n">pandas</span>
 <span class="n">cool_python_libs</span> <span class="o">+=</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">numpy</span>
 <span class="n">cool_python_libs</span> <span class="o">+=</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">requests</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Some cool python libraries: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cool_python_libs</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Some cool python libraries: </span><span class="si">{</span><span class="n">cool_python_libs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15856,8 +15853,8 @@ Some cool python libraries: pandas, numpy, requests
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ugly_formatted</span> <span class="o">=</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> Some story to tell &quot;</span>
 <span class="n">stripped</span> <span class="o">=</span> <span class="n">ugly_formatted</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ugly: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ugly_formatted</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;stripped: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ugly_formatted</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ugly: </span><span class="si">{</span><span class="n">ugly_formatted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;stripped: </span><span class="si">{</span><span class="n">stripped</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>

@@ -1,0 +1,18 @@
+repos:
+  - repo: local
+    hooks:
+      - id: clear-nb-output
+        name: clear-nb-output
+        files: \.ipynb$
+        language: system
+        entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
+      - id: black
+        name: black
+        entry: black
+        language: system
+        files: \.(py|ipynb)$
+      - id: pyupgrade
+        name: pyupgrade
+        entry: nbqa pyupgrade --py310-plus
+        language: system
+        files: \.(py|ipynb)$

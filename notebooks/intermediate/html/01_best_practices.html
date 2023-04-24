@@ -15149,13 +15149,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h3><p><code>pipenv</code> is currently the recommended tool for dependency management but <a href="https://packaging.python.org/guides/tool-recommendations/#application-dependency-management">&quot;consider other tools such as pip when pipenv does not meet your use case&quot;</a>. If <code>pipenv</code> doesn't fit your use case, I recommend using <code>virtualenvwrapper</code> for managing virtual environments and <code>pip</code> for package management. On the other hand, if you're working on only a couple of projects, built-in <a href="https://docs.python.org/3/library/venv.html"><code>venv</code></a> will do just fine.</p>
-<h4 id="pipenv"><a href="https://pipenv.readthedocs.io/en/latest/"><code>pipenv</code></a><a class="anchor-link" href="#pipenv">&#182;</a></h4><ul>
-<li>Basically combines <code>pip</code> and <code>virtualenv</code> under single CLI</li>
-<li><a href="https://pipenv.readthedocs.io/en/latest/basics/#example-pipfile">Pipfile</a> which replaces the need for requirements.txt and requirements-dev.txt</li>
-<li><a href="https://pipenv.readthedocs.io/en/latest/basics/#example-pipfile-lock">Pipfile.lock</a> which pins dependencies, this means deterministic builds</li>
-<li>Possibility to visualize the <a href="https://pipenv.readthedocs.io/en/latest/#pipenv-graph">dependency graph</a></li>
-<li><a href="https://pipenv.readthedocs.io/en/latest/advanced/#automatic-python-installation">Compatible with <code>pyenv</code></a></li>
+<h3 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h3><p><code>poetry</code> is currently the recommended tool for dependency management but <a href="https://packaging.python.org/guides/tool-recommendations/#application-dependency-management">&quot;consider other tools such as pip when poetry does not meet your use case&quot;</a>. If <code>poetry</code> doesn't fit your use case, I recommend using <code>virtualenvwrapper</code> for managing virtual environments and <code>pip</code> for package management. On the other hand, if you're working on only a couple of projects, built-in <a href="https://docs.python.org/3/library/venv.html"><code>venv</code></a> will do just fine.</p>
+<h4 id="poetry"><a href="https://python-poetry.org/docs/"><code>poetry</code></a><a class="anchor-link" href="#poetry">&#182;</a></h4><ul>
+<li>Basically combines <code>pip</code>, <code>virtualenv</code>, and packaging facilities under single CLI</li>
+<li><a href="https://python-poetry.org/docs/pyproject/">pyproject.toml</a> which replaces the need for requirements.txt and requirements-dev.txt</li>
+<li>poetry.lock which pins dependencies, this means deterministic builds</li>
 </ul>
 
 </div>
@@ -15366,27 +15364,8 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="yapf"><a href="https://github.com/google/yapf"><code>yapf</code></a><a class="anchor-link" href="#yapf">&#182;</a></h4><ul>
-<li><a href="https://www.python.org/dev/peps/pep-0008/?">PEP8</a> compliant code that also looks good</li>
-<li>Loads of <a href="https://github.com/google/yapf#knobs">configuration options</a> - but also reasonable defaults</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="black"><a href="https://black.readthedocs.io/en/stable/"><code>black</code></a><a class="anchor-link" href="#black">&#182;</a></h4><ul>
-<li>Note requires Python 3.6+</li>
-<li>Note &quot;This is a beta product&quot; while writing this</li>
-<li>Uncompromising - not as many configuration options as in <code>yapf</code></li>
-<li>Good <a href="https://black.readthedocs.io/en/stable/editor_integration.html">integration with editors</a></li>
-<li>Try it in the <a href="https://black.now.sh">playground</a></li>
+<li>This is the go-to formatter of the Python community</li>
 </ul>
 
 </div>
@@ -15411,38 +15390,8 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="flake8"><a href="http://flake8.pycqa.org/en/latest/"><code>flake8</code></a><a class="anchor-link" href="#flake8">&#182;</a></h4><ul>
-<li>Wraps <a href="https://pypi.org/project/mccabe/"><code>mccabe</code></a> (complexity checker), <a href="https://pypi.org/project/pycodestyle/"><code>pycodestyle</code></a> (PEP8), and <a href="https://pypi.org/project/pyflakes/"><code>pyflakes</code></a> (error checker)</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="pylint"><a href="https://pylint.readthedocs.io/en/latest/"><code>pylint</code></a><a class="anchor-link" href="#pylint">&#182;</a></h4><ul>
-<li>More verbose compared to <code>flake8</code></li>
-<li>Criticized about the default configuration but is easily configurable</li>
-<li>Gives an overall score</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="bandit"><a href="https://pypi.org/project/bandit/"><code>bandit</code></a><a class="anchor-link" href="#bandit">&#182;</a></h4><ul>
-<li>Checks for security vulnerabilities</li>
+<h4 id="ruff"><a href="https://beta.ruff.rs/docs/"><code>ruff</code></a><a class="anchor-link" href="#ruff">&#182;</a></h4><ul>
+<li>Most comprehensive linter. As a bonus, it's extremely fast.</li>
 </ul>
 
 </div>
@@ -15611,10 +15560,9 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h3><p>Tooling depends on which git repository manager option you've chosen and what kind of requirements you have. For example:</p>
 <ul>
-<li>Gitlab has a built-in <a href="https://about.gitlab.com/features/gitlab-ci-cd/">integrated CI/CD</a></li>
+<li><a href="https://github.com/features/actions">GitHub Actions</a></li>
+<li>If you're using Gitlab, it also has <a href="https://about.gitlab.com/features/gitlab-ci-cd/">integrated CI/CD</a></li>
 <li>Same for <a href="https://www.atlassian.com/continuous-delivery/continuous-integration-tutorial">BitBucket</a></li>
-<li>If you're using GitHub, see <a href="https://github.com/marketplace/category/continuous-integration">full list of available tools</a></li>
-<li>There's an extensive comparison of different providers in <a href="https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software">wikipedia</a></li>
 </ul>
 
 </div>
@@ -15785,9 +15733,8 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="gprof2dot"><a href="https://github.com/jrfonseca/gprof2dot"><code>gprof2dot</code></a><a class="anchor-link" href="#gprof2dot">&#182;</a></h4><ul>
-<li>Find the performance bottlenecks of your application via illustrative graphs</li>
-<li>If you're using <code>pytest</code> (like you should), see also <a href="https://pypi.org/project/pytest-profiling/"><code>pytest-profiling</code></a> which is powered by <code>gprof2dot</code></li>
+<h4 id="memray"><a href="https://bloomberg.github.io/memray/"><code>memray</code></a><a class="anchor-link" href="#memray">&#182;</a></h4><ul>
+<li>Probably the only memory profiler you'll ever need</li>
 </ul>
 
 </div>
@@ -15803,20 +15750,6 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <h4 id="py-spy"><a href="https://github.com/benfred/py-spy"><code>py-spy</code></a><a class="anchor-link" href="#py-spy">&#182;</a></h4><ul>
 <li>Profile running Python program without the need for modifying the source code or restarting the target process</li>
 <li>Potential tool for identifying problems of e.g. a web application in production</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="objgraph"><a href="https://mg.pov.lt/objgraph/"><code>objgraph</code></a><a class="anchor-link" href="#objgraph">&#182;</a></h4><ul>
-<li>Graphs which are useful while hunting memory leaks</li>
 </ul>
 
 </div>
@@ -15846,32 +15779,6 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <li>Browser and OS information of the client</li>
 <li>Support for other languages as well</li>
 </ul>
-
-</div>
-</div>
-</div>
-</div>
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="rollbar"><a href="https://docs.rollbar.com/docs/python"><code>rollbar</code></a><a class="anchor-link" href="#rollbar">&#182;</a></h4><ul>
-<li>Very similar to sentry</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>While writing this, both sentry and rollbar are free for hobbyist use.</p>
 
 </div>
 </div>
@@ -15924,7 +15831,8 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="General-guidelines">General guidelines<a class="anchor-link" href="#General-guidelines">&#182;</a></h3><ul>
-<li>Use Python 3, legacy Python (aka 2.7) will <a href="https://pythonclock.org/">retire soon</a></li>
+<li>If you're building applications, use the latest Python.</li>
+<li>If you're building libraries, make sure they support also older Python versions.</li>
 <li>Develop in branches. Even if you're the only person in the project, branching makes it possible to easily switch between different features / bug fixes.</li>
 <li>If you're not developing alone, practice code reviews. It's one of the best ways to learn for both parties.</li>
 <li>Document your master pieces</li>

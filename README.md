@@ -22,7 +22,7 @@ If you can not access Python and/or Jupyter Notebook on your machine, you can st
 
 #### Usage (Binder in the cloud)
 
-You can also just use [Binder:](https://mybinder.org/) By clicking of this [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jerry-git/learn-python3/master) badge, the project is opened in a Jupyter instance in the cloud and you can then navigate to the folders containing the notebooks and start them each and interactively explorte them! 
+You can also just use [Binder:](https://mybinder.org/) By clicking of this [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jerry-git/learn-python3/master) badge, the project is opened in a Jupyter instance in the cloud and you can then navigate to the folders containing the notebooks and start them each and interactively explore them! 
 
 #### Contributing
 See [contributing](https://github.com/jerry-git/learn-python3/blob/master/CONTRIBUTING.md) guide.
